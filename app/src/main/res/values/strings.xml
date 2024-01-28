@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">E-Braille</string>
+    <string name="braille_character">Braille Character</string>
 </resources>

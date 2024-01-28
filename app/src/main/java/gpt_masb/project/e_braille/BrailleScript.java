@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class BrailleScript {
 
-    public Map<Character, int[]> getAlphabetsMap() {
+    public Map<Character, int[]> getAlphabetsMap() {   //Return the map of braille characters for alphabets
         ArrayList<Character> charList = new ArrayList<>();
         Map<Character, int[]> hashMap = new HashMap<>();
 
@@ -72,7 +72,7 @@ public class BrailleScript {
         return hashMap;
     }
 
-    public Map<Character, int[]> getNumbersMap() {
+    public Map<Character, int[]> getNumbersMap() {   //Return the map of braille characters for alphabets
         Map<Character, int[]> hashMap = new HashMap<>();
 
 
@@ -103,7 +103,7 @@ public class BrailleScript {
 
 
 
-    public <K, V> K getKeyByValue(Map<K, V> map, V value) {
+    public <K, V> K getKeyByValue(Map<K, V> map, V value) {   //Return the value of key for braille character
         for (Map.Entry<K, V> entry : map.entrySet()) {
             if (Arrays.equals((int[])entry.getValue(),(int[]) value)) {
                 return entry.getKey();

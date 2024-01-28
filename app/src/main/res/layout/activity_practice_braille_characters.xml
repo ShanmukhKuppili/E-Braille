@@ -1,37 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LearnBraille"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    tools:context=".PracticeBrailleCharacters"
+    android:orientation="vertical">
 
     <include layout="@layout/toolbar_layout"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/findCharacter"
-        android:layout_width="@dimen/_200sdp"
-        android:layout_height="wrap_content"
-        android:hint="Enter Character"
-        app:endIconDrawable="@drawable/search"
-        app:endIconMode="custom"
-        android:layout_marginTop="@dimen/_80sdp">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="text"
-            android:textAlignment="center"
-            android:maxLength="1"
-            android:autofillHints=""/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <LinearLayout
-        android:id="@+id/displayLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -44,6 +22,15 @@
             android:text="a"
             android:textStyle="bold"
             android:textSize="@dimen/_40sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Braille Character for above character"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_20sdp"/>
 
         <GridLayout
             android:layout_width="wrap_content"
@@ -97,5 +84,21 @@
 
         </GridLayout>
 
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:paddingHorizontal="@dimen/_50sdp"
+            android:paddingVertical="@dimen/_15sdp"
+            android:text="Next"
+            android:textSize="@dimen/_18sdp"
+            app:cornerRadius="15dp"
+            app:icon="@drawable/next"
+            app:iconGravity="end" />
+
     </LinearLayout>
+
 </LinearLayout>

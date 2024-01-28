@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -21,6 +22,9 @@ public class PracticeBraille extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             toolbar.setSubtitle("Practice Braille");
         }
+
+        findViewById(R.id.brailleCharacter).setOnClickListener(v -> startActivity(new Intent(this, PracticeBrailleCharacters.class)));
+        findViewById(R.id.englishCharacter).setOnClickListener(v -> startActivity(new Intent(this, PracticeEnglishCharacters.class)));
     }
 
     @Override

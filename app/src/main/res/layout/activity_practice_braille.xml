@@ -16,6 +16,26 @@
         android:orientation="vertical"
         android:gravity="center">
 
+        <Button
+            android:id="@+id/brailleCharacter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Braille Character from English"
+            android:textSize="@dimen/_14sdp"
+            android:paddingVertical="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            app:cornerRadius="@dimen/_10sdp"/>
+
+        <Button
+            android:id="@+id/englishCharacter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="English Character from Braille"
+            android:textSize="@dimen/_14sdp"
+            android:paddingVertical="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            app:cornerRadius="@dimen/_10sdp"/>
 
     </LinearLayout>
 
