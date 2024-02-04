@@ -1,9 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PracticeEnglishCharacters">
+    tools:context=".PracticeEnglishCharacters"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/toolbar_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:columnCount="2">
+
+            <ImageView
+                android:id="@+id/position0"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/round_image_white"
+                android:contentDescription="@string/braille_character" />
+            <ImageView
+                android:id="@+id/position3"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/round_image_white"
+                android:contentDescription="@string/braille_character" />
+            <ImageView
+                android:id="@+id/position1"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/round_image_white"
+                android:contentDescription="@string/braille_character" />
+            <ImageView
+                android:id="@+id/position4"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/round_image_white"
+                android:contentDescription="@string/braille_character" />
+            <ImageView
+                android:id="@+id/position2"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/round_image_white"
+                android:contentDescription="@string/braille_character" />
+            <ImageView
+                android:id="@+id/position5"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/round_image_white"
+                android:contentDescription="@string/braille_character" />
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter English Alphabet for above Braille Character"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_20sdp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="wrap_content"
+            android:minEms="5"
+            android:hint="English alphabet"
+            android:layout_marginTop="@dimen/_30sdp">
+            <EditText
+                android:id="@+id/enteredChar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:maxLength="1"
+                android:autofillHints=""/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:paddingHorizontal="@dimen/_50sdp"
+            android:paddingVertical="@dimen/_15sdp"
+            android:text="Next"
+            android:textSize="@dimen/_18sdp"
+            app:cornerRadius="15dp"
+            app:icon="@drawable/next"
+            app:iconGravity="end" />
+
+    </LinearLayout>
+
+</LinearLayout>

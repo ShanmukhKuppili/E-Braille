@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -22,7 +23,7 @@ public class PracticeBrailleCharacters extends AppCompatActivity {
     TextView character;
     ImageView position0, position1, position2, position3, position4, position5;
     int[] brailleArr = {0, 0, 0, 0 , 0, 0};
-    int currentCharIndex = 0;
+    int currentCharIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,13 +45,20 @@ public class PracticeBrailleCharacters extends AppCompatActivity {
         position4 = findViewById(R.id.position4);
         position5 = findViewById(R.id.position5);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("Practice Module", MODE_PRIVATE);
+        currentCharIndex = sharedPreferences.getInt("Practice 1", 0);
+
         BrailleScript brailleScript = new BrailleScript();
         ArrayList<Character> charactersList = new ArrayList<>(brailleScript.getAlphabetsMap().keySet());
 
         charactersList.addAll(new ArrayList<>(brailleScript.getNumbersMap().keySet()));
 
-        //Log.d("key list", charactersList.toString());
         character.setText(charactersList.get(currentCharIndex).toString());
+
+        if (currentCharIndex == charactersList.size() - 1) {
+            Button next = (Button) findViewById(R.id.nextButton);
+            next.setText("Done");
+        }
 
         position0.setOnClickListener(v -> {
             if (brailleArr[0] == 0) {
@@ -117,6 +125,9 @@ public class PracticeBrailleCharacters extends AppCompatActivity {
             Map<Character, int[]> numbericMap = brailleScript.getNumbersMap();
             if(Arrays.equals(alphabetMap.get(charactersList.get(currentCharIndex)), brailleArr) || Arrays.equals(numbericMap.get(charactersList.get(currentCharIndex)), brailleArr)) {
                 currentCharIndex++;
+                SharedPreferences.Editor ed = sharedPreferences.edit();
+                ed.putInt("Practice 1", currentCharIndex);
+                ed.apply();
 
                 if (currentCharIndex == charactersList.size() - 1) {
                     Button next = (Button) v;
