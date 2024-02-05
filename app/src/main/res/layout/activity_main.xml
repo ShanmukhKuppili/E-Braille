@@ -79,7 +79,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         app:srcCompat="@drawable/dictionary" />
                     <TextView
-                        android:text="Dictionary and Translation"
+                        android:text="Dictionary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
@@ -89,6 +89,41 @@
                         android:textSize="@dimen/_14sdp"                        />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/translation"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="@dimen/_160sdp"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:backgroundTint="@color/colorPrimary"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="@dimen/_20sdp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:srcCompat="@drawable/dictionary" />
+                    <TextView
+                        android:text="Translation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/practice"
