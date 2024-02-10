@@ -48,8 +48,7 @@ public class PracticeEnglishCharacters extends AppCompatActivity {
         position4 = findViewById(R.id.position4);
         position5 = findViewById(R.id.position5);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("Practice Module", MODE_PRIVATE);
-        currentCharIndex = sharedPreferences.getInt("Practice 2", 0);
+
 
         BrailleScript brailleScript = new BrailleScript();
         allCharMap = brailleScript.getAlphabetsMap();
@@ -84,9 +83,7 @@ public class PracticeEnglishCharacters extends AppCompatActivity {
 
                         if (Arrays.equals(enteredCharArr, curCharArr)) {
                             currentCharIndex++;
-                            SharedPreferences.Editor ed = sharedPreferences.edit();
-                            ed.putInt("Practice 2", currentCharIndex);
-                            ed.apply();
+                            savePracticeData(currentCharIndex);
 
                             if (currentCharIndex == charactersList.size() - 1) {
                                 Button next = (Button) v;
@@ -138,5 +135,16 @@ public class PracticeEnglishCharacters extends AppCompatActivity {
                 dots[i].setBackgroundResource(R.drawable.round_image_black);
             }
         }
+    }
+
+    private void getPracticeHistory() {
+        SharedPreferences sharedPreferences = getSharedPreferences("Practice Module", MODE_PRIVATE);
+        currentCharIndex = sharedPreferences.getInt("Practice 2", 0);
+    }
+
+    private void savePracticeData(int currentCharIndex) {
+        SharedPreferences.Editor ed = getSharedPreferences("Practice Module", MODE_PRIVATE).edit();
+        ed.putInt("Practice 2", currentCharIndex);
+        ed.apply();
     }
 }

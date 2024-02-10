@@ -45,8 +45,7 @@ public class PracticeBrailleCharacters extends AppCompatActivity {
         position4 = findViewById(R.id.position4);
         position5 = findViewById(R.id.position5);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("Practice Module", MODE_PRIVATE);
-        currentCharIndex = sharedPreferences.getInt("Practice 1", 0);
+        getPracticeHistory();
 
         BrailleScript brailleScript = new BrailleScript();
         ArrayList<Character> charactersList = new ArrayList<>(brailleScript.getAlphabetsMap().keySet());
@@ -125,9 +124,7 @@ public class PracticeBrailleCharacters extends AppCompatActivity {
             Map<Character, int[]> numbericMap = brailleScript.getNumbersMap();
             if(Arrays.equals(alphabetMap.get(charactersList.get(currentCharIndex)), brailleArr) || Arrays.equals(numbericMap.get(charactersList.get(currentCharIndex)), brailleArr)) {
                 currentCharIndex++;
-                SharedPreferences.Editor ed = sharedPreferences.edit();
-                ed.putInt("Practice 1", currentCharIndex);
-                ed.apply();
+                savePracticeData(currentCharIndex);
 
                 if (currentCharIndex == charactersList.size() - 1) {
                     Button next = (Button) v;
@@ -159,5 +156,16 @@ public class PracticeBrailleCharacters extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home)
             finish();
         return super.onOptionsItemSelected(item);
+    }
+
+    private void getPracticeHistory() {
+        SharedPreferences sharedPreferences = getSharedPreferences("Practice Module", MODE_PRIVATE);
+        currentCharIndex = sharedPreferences.getInt("Practice 1", 0);
+    }
+
+    private void savePracticeData(int currentCharIndex) {
+        SharedPreferences.Editor ed = getSharedPreferences("Practice Module", MODE_PRIVATE).edit();
+        ed.putInt("Practice 1", currentCharIndex);
+        ed.apply();
     }
 }

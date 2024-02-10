@@ -7,7 +7,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -39,7 +38,7 @@ public class ProgressModule extends AppCompatActivity {
         achievementPractice = findViewById(R.id.achievementsPractice);
 
         generatePracticeAnalysisGraph();
-        generatePracticeAchievements();
+        updateUserAchievements();
     }
 
     @Override
@@ -76,7 +75,7 @@ public class ProgressModule extends AppCompatActivity {
         progressGraph.animate();
     }
 
-    private void generatePracticeAchievements() {
+    private void updateUserAchievements() {
         SharedPreferences sp = getSharedPreferences("Practice Module", MODE_PRIVATE);
         int currentStateBraille1 = sp.getInt("Practice 1", 0);
         int currentStateBraille2 = sp.getInt("Practice 2", 0);
@@ -85,7 +84,7 @@ public class ProgressModule extends AppCompatActivity {
             achievementPractice.setText("   - Completed Stage - 1");
         } else if ((float) currentStateBraille2/36 == 1) {
             achievementPractice.setText("   - Completed Stage - 2");
-        } else if ((float) currentStateBraille1/36==1 && (float) currentStateBraille2==1) {
+        } else if ((float) currentStateBraille1/36==1 && (float) currentStateBraille2/36 == 1) {
             achievementPractice.setText("   - Completed Stage - 1\n   - Completed Stage - 2");
         }
     }

@@ -107,7 +107,7 @@ public class LearnBraille extends AppCompatActivity {
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             // Trigger vibration when the Braille dot is touched
-                            vibrateBrailleDotTouch();
+                            activateVibrationMotor();
                         }
                         return true;
                     }
@@ -124,7 +124,7 @@ public class LearnBraille extends AppCompatActivity {
         }
     }
 
-    private void vibrateBrailleDotTouch() {
+    private void activateVibrationMotor() {
         if (vibrator != null) {
             // Vibrate for a short duration when a Braille dot is touched
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
