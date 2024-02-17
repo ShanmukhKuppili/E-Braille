@@ -48,7 +48,7 @@ public class PracticeEnglishCharacters extends AppCompatActivity {
         position4 = findViewById(R.id.position4);
         position5 = findViewById(R.id.position5);
 
-
+        getPracticeHistory();
 
         BrailleScript brailleScript = new BrailleScript();
         allCharMap = brailleScript.getAlphabetsMap();
@@ -60,7 +60,7 @@ public class PracticeEnglishCharacters extends AppCompatActivity {
 
         Log.d("characterlist braille", charactersList.toString());
 
-        if (currentCharIndex == 26) {
+        if (currentCharIndex >= 26) {
             enteredChar.setInputType(InputType.TYPE_CLASS_NUMBER);
             TextView question = (TextView) findViewById(R.id.question);
             question.setText("Enter Number for above Braille Character");
@@ -69,9 +69,9 @@ public class PracticeEnglishCharacters extends AppCompatActivity {
             next.setText("Done");
         }
 
-        curCharArr = allCharMap.getOrDefault(charactersList.get(currentCharIndex), new int[]{0});
-        assert curCharArr != null;
-        if (curCharArr.length == 6) {
+        if (currentCharIndex < charactersList.size()) {
+            curCharArr = allCharMap.getOrDefault(charactersList.get(currentCharIndex), new int[]{0});
+            assert curCharArr != null;
             setCurBrailleChar(curCharArr);
 
             findViewById(R.id.nextButton).setOnClickListener(v -> {
@@ -116,6 +116,7 @@ public class PracticeEnglishCharacters extends AppCompatActivity {
             });
         } else {
             Toast.makeText(this, "No char available!", Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
 
