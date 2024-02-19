@@ -18,10 +18,10 @@
             android:name=".ProgressModule"
             android:exported="false" />
         <activity
-            android:name=".PracticeEnglishCharacters"
+            android:name=".PracticeBrailleNumbers"
             android:exported="false" />
         <activity
-            android:name=".PracticeBrailleCharacters"
+            android:name=".PracticeBrailleAlphabets"
             android:exported="false" />
         <activity
             android:name=".Practice"

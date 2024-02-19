@@ -55,7 +55,7 @@ public class ProgressModule extends AppCompatActivity {
         // adding new entry to our array list with bar
         // entry and passing x and y axis value to it.
         SharedPreferences sp = getSharedPreferences("Practice Module", MODE_PRIVATE);
-        int currentStateBraille1 = sp.getInt("Practice 1", 0);
+        int currentStateBraille1 = sp.getInt("Practice 1 index", 0);
         int currentStateBraille2 = sp.getInt("Practice 2", 0);
 
         //Log.d("current state braille", ""+currentStateBraille2);
@@ -77,7 +77,7 @@ public class ProgressModule extends AppCompatActivity {
 
     private void updateUserAchievements() {
         SharedPreferences sp = getSharedPreferences("Practice Module", MODE_PRIVATE);
-        int currentStateBraille1 = sp.getInt("Practice 1", 0);
+        int currentStateBraille1 = sp.getInt("Practice 1 index", 0);
         int currentStateBraille2 = sp.getInt("Practice 2", 0);
 
         if((float) currentStateBraille1/36 == 1) {

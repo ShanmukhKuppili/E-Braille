@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PracticeBrailleCharacters"
+    tools:context=".PracticeBrailleAlphabets"
     android:orientation="vertical">
 
     <include layout="@layout/toolbar_layout"/>
@@ -85,7 +85,7 @@
         </GridLayout>
 
         <Button
-            android:id="@+id/nextButton"
+            android:id="@+id/submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
@@ -93,10 +93,10 @@
             android:layout_marginEnd="@dimen/_20sdp"
             android:paddingHorizontal="@dimen/_50sdp"
             android:paddingVertical="@dimen/_15sdp"
-            android:text="Next"
+            android:text="Submit"
             android:textSize="@dimen/_18sdp"
             app:cornerRadius="15dp"
-            app:icon="@drawable/next"
+            app:icon="@drawable/submit"
             app:iconGravity="end" />
 
     </LinearLayout>
