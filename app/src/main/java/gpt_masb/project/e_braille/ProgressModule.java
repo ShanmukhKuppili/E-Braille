@@ -55,13 +55,17 @@ public class ProgressModule extends AppCompatActivity {
         // adding new entry to our array list with bar
         // entry and passing x and y axis value to it.
         SharedPreferences sp = getSharedPreferences("Practice Module", MODE_PRIVATE);
-        int currentStateBraille1 = sp.getInt("Practice 1", 0);
-        int currentStateBraille2 = sp.getInt("Practice 2", 0);
+        int practiceIndex1 = sp.getInt("Practice 1 index", 0);
+        long practiceChars1Len1 = sp.getString("Practice 1 chars1", "").length();
+        long practiceChars2Len1 = sp.getString("Practice 1 chars2", "").length();
+        int practiceIndex2 = sp.getInt("Practice 2 index", 0);
+        long practiceChars1Len2 = sp.getString("Practice 2 chars1", "").length();
+        long practiceChars2Len2 = sp.getString("Practice 2 chars2", "").length();
 
         //Log.d("current state braille", ""+currentStateBraille2);
 
-        pieEntries.add(new PieEntry((float) currentStateBraille1/36*100,"English - Braille(%)"));
-        pieEntries.add(new PieEntry((float) currentStateBraille2/36*100,"Braille - English(%)"));
+        pieEntries.add(new PieEntry((float) practiceIndex1/(practiceChars1Len1+practiceChars2Len1)*100,"Braille Alphabets(%)"));
+        pieEntries.add(new PieEntry((float) practiceIndex2/(practiceChars1Len2+practiceChars2Len2)*100,"Braille Numbers(%)"));
 
         PieDataSet pieDataSet = new PieDataSet(pieEntries,"");
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
@@ -77,14 +81,18 @@ public class ProgressModule extends AppCompatActivity {
 
     private void updateUserAchievements() {
         SharedPreferences sp = getSharedPreferences("Practice Module", MODE_PRIVATE);
-        int currentStateBraille1 = sp.getInt("Practice 1", 0);
-        int currentStateBraille2 = sp.getInt("Practice 2", 0);
+        int practiceIndex1 = sp.getInt("Practice 1 index", 0);
+        long practiceChars1Len1 = sp.getString("Practice 1 chars1", "").length();
+        long practiceChars2Len1 = sp.getString("Practice 1 chars2", "").length();
+        int practiceIndex2 = sp.getInt("Practice 2 index", 0);
+        long practiceChars1Len2 = sp.getString("Practice 2 chars1", "").length();
+        long practiceChars2Len2 = sp.getString("Practice 2 chars2", "").length();
 
-        if((float) currentStateBraille1/36 == 1) {
+        if((float) practiceIndex1/(practiceChars1Len1+practiceChars2Len1) == 1) {
             achievementPractice.setText("   - Completed Stage - 1");
-        } else if ((float) currentStateBraille2/36 == 1) {
+        } else if ((float) practiceIndex2/(practiceChars1Len2+practiceChars2Len2) == 1) {
             achievementPractice.setText("   - Completed Stage - 2");
-        } else if ((float) currentStateBraille1/36==1 && (float) currentStateBraille2/36 == 1) {
+        } else if ((float) practiceIndex1/(practiceChars1Len1+practiceChars2Len1) ==1 && (float) practiceIndex2/(practiceChars1Len2+practiceChars2Len2) == 1) {
             achievementPractice.setText("   - Completed Stage - 1\n   - Completed Stage - 2");
         }
     }

@@ -23,8 +23,8 @@ public class PracticeBraille extends AppCompatActivity {
             toolbar.setSubtitle("Practice Braille");
         }
 
-        findViewById(R.id.brailleCharacter).setOnClickListener(v -> startActivity(new Intent(this, PracticeBrailleCharacters.class)));
-        findViewById(R.id.englishCharacter).setOnClickListener(v -> startActivity(new Intent(this, PracticeEnglishCharacters.class)));
+        findViewById(R.id.brailleAlphabets).setOnClickListener(v -> startActivity(new Intent(this, PracticeBrailleAlphabets.class)));
+        findViewById(R.id.brailleNumbers).setOnClickListener(v -> startActivity(new Intent(this, PracticeBrailleNumbers.class)));
     }
 
     @Override

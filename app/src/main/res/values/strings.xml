@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">E-Braille</string>
     <string name="braille_character">Braille Character</string>
+    <string name="stage1">Stage1</string>
+    <string name="stage2">Stage2</string>
+    <string name="stage3">Stage3</string>
+    <string name="stage4">Stage4</string>
+    <string name="stage5">Stage5</string>
+    <string name="stage6">Stage6</string>
+    <string name="stage7">Stage7</string>
+    <string name="stage8">Stage8</string>
+    <string name="stage9">Stage9</string>
+    <string name="stage10">Stage10</string>
+    <string name="stage11">Stage11</string>
+    <string name="stage12">Stage12</string>
+    <string name="stage13">Stage13</string>
+    <string name="stage14">Stage14</string>
+    <string name="stage15">Stage15</string>
 </resources>

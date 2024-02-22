@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Challenge"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/Stage1"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
+                android:insetLeft="50dp"
+                android:insetTop="15dp"
+                android:insetBottom="15dp"
+                android:text="stage1" />
+
+            <Button
+                android:id="@+id/Stage2"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
+                android:insetLeft="50dp"
+                android:insetTop="15dp"
+                android:insetBottom="15dp"
+                android:text="stage2" />
+
+            <Button
+                android:id="@+id/Stage3"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
+                android:insetLeft="50dp"
+                android:insetTop="15dp"
+                android:insetBottom="15dp"
+                android:text="stage3"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/Stage4"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
+                android:insetLeft="50dp"
+                android:insetTop="15dp"
+                android:insetBottom="15dp"
+                android:text="stage4" />
+
+            <Button
+                android:id="@+id/Stage5"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
+                android:insetLeft="50dp"
+                android:insetTop="15dp"
+                android:insetBottom="15dp"
+                android:text="stage5" />
+
+            <Button
+                android:id="@+id/Stage6"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
+                android:insetLeft="50dp"
+                android:insetTop="15dp"
+                android:insetBottom="15dp"
+                android:text="stage6" />
+
+            <Button
+                android:id="@+id/Stage7"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
+                android:insetLeft="50dp"
+                android:insetTop="15dp"
+                android:insetBottom="15dp"
+                android:text="stage7" />
+
+            <Button
+                android:id="@+id/Stage8"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
+                android:insetLeft="50dp"
+                android:insetTop="15dp"
+                android:insetBottom="15dp"
+                android:text="stage8" />
+
+            <Button
+                android:id="@+id/Stage9"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
+                android:insetLeft="50dp"
+                android:insetTop="15dp"
+                android:insetBottom="15dp"
+                android:text="stage9" />
+
+            <Button
+                android:id="@+id/Stage10"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
+                android:insetLeft="50dp"
+                android:insetTop="15dp"
+                android:insetBottom="15dp"
+                android:text="stage10" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
