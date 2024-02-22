@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         findViewById(R.id.practice).setOnClickListener(v -> startActivity(new Intent(this, Practice.class)));
+        findViewById(R.id.challenge).setOnClickListener(v -> startActivity(new Intent(this, Challenge.class)));
         findViewById(R.id.progress).setOnClickListener(v -> startActivity(new Intent(this, ProgressModule.class)));
     }
 }

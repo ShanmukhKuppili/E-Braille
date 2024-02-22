@@ -59,7 +59,7 @@ public class PracticeBrailleNumbers extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            toolbar.setSubtitle("Learn Braille");
+            toolbar.setSubtitle("Practice Braille (Numbers)");
         }
 
         position0 = findViewById(R.id.position0);

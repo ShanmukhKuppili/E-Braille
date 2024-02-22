@@ -56,7 +56,7 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            toolbar.setSubtitle("Learn Braille");
+            toolbar.setSubtitle("Practice Braille (Alphabets)");
         }
 
         position0 = findViewById(R.id.position0);
