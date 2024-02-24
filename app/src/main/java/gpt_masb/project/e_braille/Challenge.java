@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -89,6 +92,8 @@ public class Challenge extends AppCompatActivity {
             startActivity(i);
         } );
 
+        getChallengeSession();
+
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
     }
 
@@ -97,5 +102,32 @@ public class Challenge extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home)
             finish();
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        getChallengeSession();
+    }
+
+    private void getChallengeSession() {
+        SharedPreferences sp = getSharedPreferences("Challenge Module", MODE_PRIVATE);
+        int currentStage = sp.getInt("Current Stage", 0);
+        Button[] stageBtnArr = {stage1, stage2, stage3, stage4, stage5, stage6, stage7, stage8, stage9, stage10};
+        if (currentStage > 0){
+            for (int i = 0; i < 10; i++) {
+                if (i < currentStage) {
+                    stageBtnArr[i].setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.check_circle), null, null, null);
+                    stageBtnArr[i].setEnabled(true);
+                } else if (i == currentStage) {
+                    stageBtnArr[i].setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.lock_unlocked), null, null, null);
+                    stageBtnArr[i].setEnabled(true);
+                } else {
+                    stageBtnArr[i].setEnabled(false);
+                }
+            }
+        } else{
+            stage1.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.lock_unlocked), null, null, null);
+        }
     }
 }

@@ -32,7 +32,7 @@
                     android:orientation="vertical"
                     android:gravity="center">
                     <TextView
-                        android:text="Progress"
+                        android:text="Practice Progress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
@@ -42,7 +42,67 @@
                         android:textSize="@dimen/_20sdp"/>                      />
 
                     <com.github.mikephil.charting.charts.PieChart
-                        android:id="@+id/progressGraph"
+                        android:id="@+id/progressGraphPractice"
+                        android:layout_width="@dimen/_230sdp"
+                        android:layout_height="@dimen/_230sdp"
+                        android:layout_margin="@dimen/_10sdp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:text="Challenge Progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp"/>                      />
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/progressGraphChallenge"
+                        android:layout_width="@dimen/_230sdp"
+                        android:layout_height="@dimen/_230sdp"
+                        android:layout_margin="@dimen/_10sdp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:text="Challenge Accuracy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp"/>                      />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/accuracyBarChart"
                         android:layout_width="@dimen/_230sdp"
                         android:layout_height="@dimen/_230sdp"
                         android:layout_margin="@dimen/_10sdp"/>
@@ -80,6 +140,7 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:textColor="@color/black"
                         android:textAlignment="textStart"
+                        android:fontFamily="sans-serif-medium"
                         android:textSize="@dimen/_16sdp"/>
 
                     <TextView
@@ -90,7 +151,7 @@
                         android:textStyle="bold"
                         android:ems="12"
                         android:layout_margin="@dimen/_10sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColorCustom"
                         android:textAlignment="textStart"
                         android:textSize="@dimen/_16sdp"/>
 
@@ -103,6 +164,7 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:textColor="@color/black"
                         android:textAlignment="textStart"
+                        android:fontFamily="sans-serif-medium"
                         android:textSize="@dimen/_16sdp"/>
 
                     <TextView
@@ -113,7 +175,7 @@
                         android:textStyle="bold"
                         android:ems="12"
                         android:layout_margin="@dimen/_10sdp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textColorCustom"
                         android:textAlignment="textStart"
                         android:textSize="@dimen/_16sdp"/>
                 </LinearLayout>

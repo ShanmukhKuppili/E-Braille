@@ -101,8 +101,6 @@ public class BrailleScript {
         return hashMap;
     }
 
-
-
     public <K, V> K getKeyByValue(Map<K, V> map, V value) {   //Return the value of key for braille character
         for (Map.Entry<K, V> entry : map.entrySet()) {
             if (Arrays.equals((int[])entry.getValue(),(int[]) value)) {

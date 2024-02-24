@@ -393,7 +393,11 @@ public class quiz extends AppCompatActivity {
             }
         }
         if (stageNo == 4 || stageNo == 8) {
-            ans += getValueByKey(brailleMap, key);
+            String value = getValueByKey(brailleMap, key);
+            if(value == null)
+                ans += " ";
+            else
+                ans += value;
             answerView.setText(ans);
             if (x % 6 != 0) {
                 x += 1;

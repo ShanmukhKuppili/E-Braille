@@ -30,7 +30,8 @@
                 android:insetLeft="50dp"
                 android:insetTop="15dp"
                 android:insetBottom="15dp"
-                android:text="stage1" />
+                android:text="stage1"
+                android:drawableLeft="@drawable/lock_locked"/>
 
             <Button
                 android:id="@+id/Stage2"
@@ -39,7 +40,8 @@
                 android:insetLeft="50dp"
                 android:insetTop="15dp"
                 android:insetBottom="15dp"
-                android:text="stage2" />
+                android:text="stage2"
+                android:drawableLeft="@drawable/lock_locked"/>
 
             <Button
                 android:id="@+id/Stage3"
@@ -49,7 +51,8 @@
                 android:insetTop="15dp"
                 android:insetBottom="15dp"
                 android:text="stage3"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText"
+                android:drawableLeft="@drawable/lock_locked"/>
 
             <Button
                 android:id="@+id/Stage4"
@@ -58,7 +61,8 @@
                 android:insetLeft="50dp"
                 android:insetTop="15dp"
                 android:insetBottom="15dp"
-                android:text="stage4" />
+                android:text="stage4"
+                android:drawableLeft="@drawable/lock_locked"/>
 
             <Button
                 android:id="@+id/Stage5"
@@ -67,7 +71,8 @@
                 android:insetLeft="50dp"
                 android:insetTop="15dp"
                 android:insetBottom="15dp"
-                android:text="stage5" />
+                android:text="stage5"
+                android:drawableLeft="@drawable/lock_locked"/>
 
             <Button
                 android:id="@+id/Stage6"
@@ -76,7 +81,8 @@
                 android:insetLeft="50dp"
                 android:insetTop="15dp"
                 android:insetBottom="15dp"
-                android:text="stage6" />
+                android:text="stage6"
+                android:drawableLeft="@drawable/lock_locked"/>
 
             <Button
                 android:id="@+id/Stage7"
@@ -85,7 +91,8 @@
                 android:insetLeft="50dp"
                 android:insetTop="15dp"
                 android:insetBottom="15dp"
-                android:text="stage7" />
+                android:text="stage7"
+                android:drawableLeft="@drawable/lock_locked"/>
 
             <Button
                 android:id="@+id/Stage8"
@@ -94,7 +101,8 @@
                 android:insetLeft="50dp"
                 android:insetTop="15dp"
                 android:insetBottom="15dp"
-                android:text="stage8" />
+                android:text="stage8"
+                android:drawableLeft="@drawable/lock_locked"/>
 
             <Button
                 android:id="@+id/Stage9"
@@ -103,7 +111,8 @@
                 android:insetLeft="50dp"
                 android:insetTop="15dp"
                 android:insetBottom="15dp"
-                android:text="stage9" />
+                android:text="stage9"
+                android:drawableLeft="@drawable/lock_locked"/>
 
             <Button
                 android:id="@+id/Stage10"
@@ -112,7 +121,8 @@
                 android:insetLeft="50dp"
                 android:insetTop="15dp"
                 android:insetBottom="15dp"
-                android:text="stage10" />
+                android:text="stage10"
+                android:drawableLeft="@drawable/lock_locked"/>
 
         </LinearLayout>
     </ScrollView>

@@ -16,4 +16,8 @@
     <string name="stage13">Stage13</string>
     <string name="stage14">Stage14</string>
     <string name="stage15">Stage15</string>
+
+    <string name="questionmark">\?</string>
+    <string name="lessthan"><![CDATA[<]]></string>
+    <string name="greaterthan"><![CDATA[>]]></string>
 </resources>

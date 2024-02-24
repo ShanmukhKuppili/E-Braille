@@ -1,6 +1,7 @@
 package gpt_masb.project.e_braille;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
@@ -20,6 +21,15 @@ public class Result extends AppCompatActivity {
         Intent i = getIntent();
         int score = i.getIntExtra("Score",  0);
         int stageNo = i.getIntExtra("stageNo",  0);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("Challenge Module", MODE_PRIVATE);
+        SharedPreferences.Editor ed = sharedPreferences.edit();
+        int currentStage = sharedPreferences.getInt("Current Stage", 0);
+        if(stageNo>currentStage){
+            ed.putInt("Current Stage", stageNo);
+        }
+        ed.putInt("Score"+stageNo, score);
+        ed.apply();
 
         scoreEdit = findViewById(R.id.scoreEdit);
         resultMsg = findViewById(R.id.resultMsg);

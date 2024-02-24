@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Translation">
+
+    <include layout="@layout/toolbar_layout"/>
+
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/dialog_window_background"
+        android:hint="Enter Text To Translate"
+        android:padding="30dp"
+        android:paddingTop="40dp"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/translateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/dialog_window_background"
+        android:text="Translate to Braille" />
+
+
+    <TextView
+        android:id="@+id/outputText"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:scrollbars="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/dialog_window_background"
+        android:gravity="start"
+        android:padding="10dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:maxLines="500"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+
+
+</LinearLayout>

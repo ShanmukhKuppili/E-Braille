@@ -15,6 +15,38 @@
         android:theme="@style/Theme.EBraille"
         tools:targetApi="31">
         <activity
+            android:name=".Finalcontractions"
+            android:exported="false" />
+        <activity
+            android:name=".Initialcontractions"
+            android:exported="false" />
+        <activity
+            android:name=".groupsigns"
+            android:exported="false" />
+        <activity
+            android:name=".punctuation"
+            android:exported="false" />
+        <activity
+            android:name=".wordsigns"
+            android:exported="false" />
+        <!--<activity
+            android:name=".alphabets_activity"
+            android:exported="false" />-->
+        <activity
+            android:name=".Numberactivity"
+            android:exported="false"
+            android:parentActivityName=".Numberactivity" />
+        <activity
+            android:name=".Homeactivity"
+            android:exported="true"
+            android:parentActivityName=".Homeactivity" />
+        <activity
+            android:name=".BrailleDictionary"
+            android:exported="false" />
+        <activity
+            android:name=".Translation"
+            android:exported="false" />
+        <activity
             android:name=".StageIntro"
             android:parentActivityName=".MainActivity" />
         <activity
