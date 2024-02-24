@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -17,35 +18,26 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 public class quiz extends AppCompatActivity {
-
-    ImageView black1, white1, black2, white2, black3, white3, black4, white4, black5, white5, black6, white6, nextButton, pauseButton;
-    Button restartButton2, resumeButton, exitButton;
     ConstraintLayout dialog_box;
-    TextView questionText, scoreText, qNoText, answerView, stageNoT;
-    int[] ar = new int[]{0, 0, 0, 0, 0, 0};
-    private HashMap<String, String> brailleMap;
-    int score, qNo, stageNo, question_count = 0, x = 0;
+    ImageView black1, white1, black2, white2, black3, white3, black4, white4, black5, white5, black6, white6, nextButton, pauseButton;
+    TextView questionText, scoreText, qNoText, answerView, stageNoT, timerTextView;
+    Button restartButton2, resumeButton, exitButton;
+    HashMap<String, String> brailleMap;
+    Map<String, int[]> hashMap;
+    CountDownTimer countDownTimer;
     String qText, key ,ans = "";
     char q[] = new char[5];
-    Map<String, int[]> hashMap;
-    private TextView timerTextView;
-    private CountDownTimer countDownTimer;
-    private long timeLeftInMillis;
-    public static long COUNTDOWN_IN_MILLIS, left_time;
-
+    long timeLeftInMillis, COUNTDOWN_IN_MILLIS, left_time;
+    int[] ar = new int[]{0, 0, 0, 0, 0, 0};
+    int score, qNo, stageNo, question_count = 0, x = 0, c = 0;
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
         Intent restart = getIntent();
         stageNo = restart.getIntExtra("stageNo", 0);
-
-        stageNoT = findViewById(R.id.stageNoT);
-
-        stageNoT.setText("Stage " + stageNo);
 
         hashMap = new HashMap<>();
         int[] aArray = {1, 0, 0, 0, 0, 0};
@@ -75,7 +67,16 @@ public class quiz extends AppCompatActivity {
         int[] yArray = {1, 0, 1, 1, 1, 1};
         int[] zArray = {1, 0, 1, 0, 1, 1};
 
-        int[] numberArray = {0, 0, 1, 1, 1, 1};
+        int[] question = {0, 1, 1, 0, 0, 1};
+        int[] exclamation = {0, 1, 1, 1, 0, 0};
+        int[] semicolon = {0, 1, 0, 1, 0, 0};
+        int[] dash = {0, 0, 0, 0, 1, 1};
+        int[] apostrophe = {0, 0, 0, 0, 1, 0};
+        int[] attherate = {0, 1, 1, 0, 1, 1};
+        int[] hash = {1, 0, 1, 0, 1, 1};
+        int[] fullStop = {0, 1, 0, 0, 1, 1};
+        int[] equalto= {0, 1, 1, 0, 1, 1};
+        int[]  lessthan= {1, 1, 0, 0, 0, 1};
 
         brailleMap = new HashMap<>();
 
@@ -155,56 +156,31 @@ public class quiz extends AppCompatActivity {
             hashMap.put("7", gArray);
             hashMap.put("8", hArray);
             hashMap.put("9", iArray);
-            hashMap.put("n", numberArray);
             x = 0;
         } else if (stageNo == 10) {
-            int[] comma = {0, 0, 0, 1, 1, 0};
-            int[] period = {0, 1, 0, 0, 1, 0};
-            int[] question = {0, 1, 1, 0, 1, 0};
-            int[] exclamation = {0, 1, 1, 1, 0, 0};
-            int[] semicolon = {0, 1, 0, 1, 0, 0};
-            int[] colon = {0, 1, 1, 0, 0, 0};
-            int[] dash = {0, 0, 0, 0, 1, 1};
-            int[] hyphen = {0, 0, 0, 0, 1, 0};
-            int[] ellipsis = {0, 1, 0, 1, 0, 1};  // Represents "..."
-            int[] singleQuote = {0, 0, 0, 0, 1, 0};
-            int[] doubleQuote = {0, 0, 0, 1, 1, 1};
-            int[] openParenthesis = {1, 0, 1, 0, 1, 0};
-            int[] closeParenthesis = {0, 1, 0, 1, 0, 1};
-            int[] slash = {0, 0, 1, 0, 0, 1};
-            int[] backslash = {1, 0, 0, 1, 0, 0};
-            int[] ampersand = {0, 1, 1, 1, 0, 1};
-            int[] atSymbol = {0, 1, 1, 0, 1, 1};
-            int[] hashSymbol = {1, 0, 1, 0, 1, 1};
-            int[] percent = {1, 0, 0, 0, 1, 1};
-            int[] dollar = {0, 1, 0, 0, 0, 1};
-            int[] euro = {1, 0, 1, 1, 0, 1};
-            int[] pound = {1, 0, 1, 0, 0, 1};
-            int[] yen = {0, 1, 0, 1, 1, 1};
+            brailleMap.put("?", "⠓");
+            brailleMap.put("!", "⠃");
+            brailleMap.put(";", "⠉");
+            brailleMap.put("-", "⠙");
+            brailleMap.put("'", "⠑");
+            brailleMap.put("@", "⠋");
+            brailleMap.put("#", "⠛");
+            brailleMap.put(".", "⠓");
+            brailleMap.put("=", "⠊");
+            brailleMap.put("<", "⠚");
+            brailleMap.put(">", "⠚");
 
-            hashMap.put(",", comma);
-            hashMap.put(".", period);
             hashMap.put("?", question);
             hashMap.put("!", exclamation);
             hashMap.put(";", semicolon);
-            hashMap.put(":", colon);
             hashMap.put("-", dash);
-            hashMap.put("-", hyphen);
-            hashMap.put("...", ellipsis);
-            hashMap.put("'", singleQuote);
-            hashMap.put("\"", doubleQuote);
-            hashMap.put("(", openParenthesis);
-            hashMap.put(")", closeParenthesis);
-            hashMap.put("/", slash);
-            hashMap.put("\\", backslash);
-            hashMap.put("&", ampersand);
-            hashMap.put("@", atSymbol);
-            hashMap.put("#", hashSymbol);
-            hashMap.put("%", percent);
-            hashMap.put("$", dollar);
-            hashMap.put("€", euro);
-            hashMap.put("£", pound);
-            hashMap.put("¥", yen);
+            hashMap.put("'", apostrophe);
+            hashMap.put("@", attherate);
+            hashMap.put("#", hash);
+            hashMap.put(".", fullStop);
+            hashMap.put("=", equalto);
+            hashMap.put("<", lessthan);
+            hashMap.put(">", attherate);
         }
 
         black1 = findViewById(R.id.black1);
@@ -220,20 +196,21 @@ public class quiz extends AppCompatActivity {
         black6 = findViewById(R.id.black6);
         white6 = findViewById(R.id.white6);
 
-        pauseButton = findViewById(R.id.pauseButton);
         nextButton = findViewById(R.id.nextButton);
-
-        questionText = findViewById(R.id.questionText);
-        scoreText = findViewById(R.id.scoreText);
         qNoText = findViewById(R.id.qNoText);
+        scoreText = findViewById(R.id.scoreText);
+        questionText = findViewById(R.id.questionText);
         answerView = findViewById(R.id.answerView);
 
+        pauseButton = findViewById(R.id.pauseButton);
         dialog_box = findViewById(R.id.dialog_box);
         restartButton2 = findViewById(R.id.restartButton2);
         resumeButton = findViewById(R.id.resumemButton);
         exitButton = findViewById(R.id.exitButton);
-
         timerTextView = findViewById(R.id.timer);
+
+        stageNoT = findViewById(R.id.stageNoT);
+        stageNoT.setText("Stage " + stageNo);
 
         black1.setOnClickListener(view -> {
             black1.setVisibility(View.INVISIBLE);
@@ -303,9 +280,13 @@ public class quiz extends AppCompatActivity {
 
         dialog_box.setVisibility(View.INVISIBLE);
         pauseButton.setOnClickListener(view -> {
+            cancelTimer();
             dialog_box.setVisibility(View.VISIBLE);
             resumeButton.setOnClickListener(v -> {
                 dialog_box.setVisibility(View.INVISIBLE);
+                COUNTDOWN_IN_MILLIS = left_time;
+                startTimer();
+                setTime();
             });
             restartButton2.setOnClickListener(v2 -> {
                 Intent i1 = new Intent(this, StageIntro.class);
@@ -314,55 +295,51 @@ public class quiz extends AppCompatActivity {
                 finish();
             });
             exitButton.setOnClickListener(v3 -> {
-                Intent i1 = new Intent(this, MainActivity.class);
+                Intent i1 = new Intent(this, Challenge.class);
                 startActivity(i1);
                 finish();
             });
         });
-        startTimer();
         displayQuestion();
+        startTimer();
         nextButton.setOnClickListener(view -> {
             updateScore();
             reset();
-            if (qNo < 10) {
-                if (stageNo == 2 || stageNo == 10) {
-                    COUNTDOWN_IN_MILLIS = 10000;
-                    cancelTimer();
-                    startTimer();
-                    displayQuestion();
+            if (stageNo == 4 || stageNo == 8) {
+                if (x % 6 == 0) {
+                    check();
                 }
-                if (stageNo == 6) {
-                    if (x == 0) {
-                        COUNTDOWN_IN_MILLIS = 10000;
-                        cancelTimer();
-                        startTimer();
-                        displayQuestion();
-                    }
-                }
-                if (stageNo == 4 || stageNo == 8) {
-                    if (x % 6 == 0) {
-                        COUNTDOWN_IN_MILLIS = 40000;
-                        cancelTimer();
-                        startTimer();
-                        ans = "";
-                        answerView.setText(ans);
-                        displayQuestion();
-                    }
-                }
-            } else {
-                Intent i = new Intent(this, Result.class);
-                i.putExtra("Score", score);
-                i.putExtra("stageNo", stageNo);
-                startActivity(i);
-                finish();
-            }
-        });
+            }else
+                check();
+        } );
     }
-    int c = 0;
+    public void check(){
+        if(qNo == 10) {
+            Intent i = new Intent(this, Result.class);
+            i.putExtra("Score", score);
+            i.putExtra("stageNo", stageNo);
+            startActivity(i);
+            finish();
+        }
+        else {
+            ans = "";
+            answerView.setText(ans);
+            cancelTimer();
+            startTimer();
+            displayQuestion();
+        }
+    }
+    public void setTime(){
+        if(stageNo == 2 || stageNo == 6 || stageNo == 10)
+            COUNTDOWN_IN_MILLIS = 10000;
+        else
+            COUNTDOWN_IN_MILLIS = 40000;
+    }
     public void updateScore() {
         key = getKeyByValue(hashMap, ar);
-        if (stageNo == 2 || stageNo == 10) {
+        if (stageNo == 2 || stageNo == 6 || stageNo == 10) {
             if (qText.equals(key)) {
+                Toast.makeText(quiz.this, "correct",Toast.LENGTH_SHORT).show();
                 if( left_time >= 6000)
                     score += 100;
                 else if(left_time >= 5000)
@@ -371,33 +348,17 @@ public class quiz extends AppCompatActivity {
                     score += 70;
                 else if (left_time >= 1000)
                     score += 40;
-//                score += 100;
+                else
+                    score += 30;
             }
-        }
-        if (stageNo == 6) {
-            if (x == 0) {
-                if (qText.equals(key)) {
-                    if( left_time >= 6000)
-                        score += 100;
-                    else if(left_time >= 5000)
-                        score += 90;
-                    else if(left_time >= 4000)
-                        score += 70;
-                    else if (left_time >= 1000)
-                        score += 40;
-//                    score += 100;
-                }
-            } else {
-                if ("n".equals(key))
-                    x = 0;
-            }
-        }
-        if (stageNo == 4 || stageNo == 8) {
-            String value = getValueByKey(brailleMap, key);
-            if(value == null)
-                ans += " ";
             else
-                ans += value;
+                Toast.makeText(quiz.this, "incorrect",Toast.LENGTH_SHORT).show();
+        }
+        else if (stageNo == 4 || stageNo == 8) {
+            String temp = "";
+            temp += getValueByKey(brailleMap, key);
+            if (!temp.equals("null"))
+                ans += temp;
             answerView.setText(ans);
             if (x % 6 != 0) {
                 x += 1;
@@ -405,6 +366,7 @@ public class quiz extends AppCompatActivity {
                     c += 1;
             }
             if (x == 6 && c == 5){
+                Toast.makeText(quiz.this, "correct",Toast.LENGTH_SHORT).show();
                 if( left_time >= 30000)
                     score += 100;
                 else if(left_time >= 20000)
@@ -412,18 +374,20 @@ public class quiz extends AppCompatActivity {
                 else if(left_time >= 10000)
                     score += 70;
                 else if (left_time >= 5000)
+                    score += 50;
+                else
                     score += 40;
-//                score += 100;
             }
+            else
+                Toast.makeText(quiz.this, "incorrect",Toast.LENGTH_SHORT).show();
         }
-//        if(score )
-        scoreText.setText(" " + score);
+        scoreText.setText("" + score);
     }
     private String LoadQuestion() {
         String question = "";
         List<String> quesList = new ArrayList<>(hashMap.keySet());
         Collections.shuffle(quesList);
-        if (stageNo == 2 || stageNo == 6)
+        if (stageNo == 2 || stageNo == 6 || stageNo == 10)
             question = quesList.get(0);
         else if (stageNo == 4 || stageNo == 8) {
             for (int i = 0; i < 5; i++) {
@@ -437,10 +401,11 @@ public class quiz extends AppCompatActivity {
         qText = LoadQuestion();
         questionText.setText("" + qText);
         qNo = question_count + 1;
-        qNoText.setText("" + qNo + "/10");
+        qNoText.setText(qNo + "/10");
         question_count++;
         x = 1;
         c = 0;
+        setTime();
     }
     private static <K, V> V getValueByKey(Map<K, V> map, K key) {
         for (Map.Entry<K, V> entry : map.entrySet()) {
@@ -451,7 +416,6 @@ public class quiz extends AppCompatActivity {
         return null;
     }
     private static <K, V> K getKeyByValue(Map<K, V> map, V value) {
-
         for (Map.Entry<K, V> entry : map.entrySet()) {
             if (Arrays.equals((int[]) entry.getValue(), (int[]) value)) {
                 return entry.getKey();
@@ -485,6 +449,8 @@ public class quiz extends AppCompatActivity {
             @Override
             public void onFinish() {
                 timerTextView.setText("Time's up!");
+                updateScore();
+                check();
             }
         }.start();
     }
@@ -494,16 +460,10 @@ public class quiz extends AppCompatActivity {
         String timeLeftFormatted = String.format("%02d:%02d", minutes, seconds);
         timerTextView.setText(timeLeftFormatted);
     }
-
     private void cancelTimer() {
         if (countDownTimer != null) {
             left_time = timeLeftInMillis;
             countDownTimer.cancel();
         }
     }
-     @Override
-   protected void onDestroy() {
-         super.onDestroy();
-         cancelTimer();
-   }
 }

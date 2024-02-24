@@ -7,8 +7,10 @@ import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -20,19 +22,16 @@ import java.util.List;
 import java.util.Map;
 
 public class quiztext extends AppCompatActivity {
-    private HashMap<String, Integer> hashMap2;
-    ImageView nextButton,pauseButton;
-    Button restartButton2, resumeButton, exitButton;
     ConstraintLayout dialog_box;
-    TextView scoreText, qNoText, answerText, stageNoT;
-    ImageView answerImage1, answerImage2, answerImage3, answerImage4, answerImage5;
-    int score, qNo, stageNo, question_count = 0;
+    ImageView nextButton, pauseButton, answerImage1, answerImage2, answerImage3, answerImage4, answerImage5;
+    Button restartButton2, resumeButton, exitButton;
+    TextView scoreText, qNoText, stageNoT, timerTextView;
+    EditText answerText;
+    HashMap<String, Integer> hashMap2;
+    CountDownTimer countDownTimer;
     String answer, key;
-    private TextView timerTextView;
-    private CountDownTimer countDownTimer;
-    private long timeLeftInMillis;
-    public static final long COUNTDOWN_IN_MILLIS = 10000;
-
+    long timeLeftInMillis, COUNTDOWN_IN_MILLIS, left_time;
+    int score, qNo, stageNo, question_count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +43,9 @@ public class quiztext extends AppCompatActivity {
         hashMap2 = new HashMap<>();
 
         nextButton = findViewById(R.id.nextButton);
-        answerText = findViewById(R.id.answerText);
         qNoText = findViewById(R.id.qNoText);
         scoreText = findViewById(R.id.scoreText);
+        answerText = findViewById(R.id.answerText);
         answerImage1 = findViewById(R.id.answerImage1);
         answerImage2 = findViewById(R.id.answerImage2);
         answerImage3 = findViewById(R.id.answerImage3);
@@ -58,12 +57,12 @@ public class quiztext extends AppCompatActivity {
         restartButton2 = findViewById(R.id.restartButton2);
         resumeButton = findViewById(R.id.resumemButton);
         exitButton = findViewById(R.id.exitButton);
-        stageNoT = findViewById(R.id.stageNoT);
         timerTextView = findViewById(R.id.timer);
 
-        stageNoT.setText("Stage "+stageNo);
+        stageNoT = findViewById(R.id.stageNoT);
+        stageNoT.setText("Stage " + stageNo);
 
-        if (stageNo == 1) {
+        if (stageNo == 1 || stageNo == 9) {
             answerImage1.setVisibility(View.INVISIBLE);
             answerImage2.setVisibility(View.VISIBLE);
             answerImage3.setVisibility(View.INVISIBLE);
@@ -140,51 +139,104 @@ public class quiztext extends AppCompatActivity {
             hashMap2.put("0", R.drawable.j);
             answerText.setInputType(InputType.TYPE_CLASS_NUMBER);
         }
+        if (stageNo == 9){
+            hashMap2.put(".", R.drawable.fullstop);
+            hashMap2.put(";", R.drawable.semicolon);
+            hashMap2.put("!", R.drawable.exclamation);
+            hashMap2.put("?", R.drawable.questionmark);
+            hashMap2.put("-", R.drawable.dash);
+            hashMap2.put("#", R.drawable.hash);
+            hashMap2.put("'", R.drawable.apostrophe);
+            hashMap2.put("@", R.drawable.attherate);
+            hashMap2.put("=", R.drawable.equalto);
+            hashMap2.put("<", R.drawable.lessthan);
+            hashMap2.put(">", R.drawable.attherate);
+            answerText.setInputType(InputType.TYPE_CLASS_TEXT);
+        }
         dialog_box.setVisibility(View.INVISIBLE);
-        pauseButton.setOnClickListener(view->{
+        pauseButton.setOnClickListener(view -> {
+            cancelTimer();
             dialog_box.setVisibility(View.VISIBLE);
-            resumeButton.setOnClickListener(v->{
+            resumeButton.setOnClickListener(v -> {
                 dialog_box.setVisibility(View.INVISIBLE);
+                COUNTDOWN_IN_MILLIS = left_time;
+                startTimer();
+                setTime();
             });
-            restartButton2.setOnClickListener(v2->{
+            restartButton2.setOnClickListener(v2 -> {
                 Intent i1 = new Intent(this, StageIntro.class);
-                i1.putExtra("stageNo",stageNo);
+                i1.putExtra("stageNo", stageNo);
                 startActivity(i1);
+                finish();
             });
-            exitButton.setOnClickListener(v3->{
-                Intent i1 = new Intent(this, MainActivity.class);
+            exitButton.setOnClickListener(v3 -> {
+                Intent i1 = new Intent(this, Challenge.class);
                 startActivity(i1);
+                finish();
             });
         });
-
-        startTimer();
         displayQuestion();
+        startTimer();
         nextButton.setOnClickListener(view -> {
-            if (qNo < 10) {
-                answer = answerText.getText().toString();
-                cancelTimer();
-                startTimer();
-                updateScore();
-                displayQuestion();
-            } else {
-                Intent i = new Intent(this, Result.class);
-                i.putExtra("Score", score);
-                i.putExtra("stageNo", stageNo);
-                startActivity(i);
-                finish();
-            }
+            check();
         });
     }
-    public void updateScore() {
-        if(stageNo == 1 || stageNo == 5) {
-            if (answer != null && answer.equals(key)) {
-                score += 100;
-            }
+    public void check(){
+        if(qNo == 10) {
+            Intent i = new Intent(this, Result.class);
+            i.putExtra("Score", score);
+            i.putExtra("stageNo", stageNo);
+            startActivity(i);
+            finish();
         }
-        else if(stageNo == 3){
+        else {
+            cancelTimer();
+            startTimer();
+            answer = answerText.getText().toString();
+            updateScore();
+            displayQuestion();
+        }
+    }
+    public void setTime(){
+        if(stageNo == 1 || stageNo == 5 || stageNo == 9)
+            COUNTDOWN_IN_MILLIS = 10000;
+        else
+            COUNTDOWN_IN_MILLIS = 40000;
+    }
+    public void updateScore() {
+        if(stageNo == 1 || stageNo == 5 || stageNo == 9) {
             if (answer != null && answer.equals(key)) {
-                score += 100;
+                Toast.makeText(quiztext.this, "correct",Toast.LENGTH_SHORT).show();
+                if( left_time >= 6000)
+                    score += 100;
+                else if(left_time >= 5000)
+                    score += 90;
+                else if(left_time >= 4000)
+                    score += 70;
+                else if (left_time >= 1000)
+                    score += 40;
+                else
+                    score += 30;
             }
+            else
+                Toast.makeText(quiztext.this, "incorrect",Toast.LENGTH_SHORT).show();
+        }
+        else if(stageNo == 3 || stageNo == 7){
+            if (answer != null && answer.equals(key)) {
+                Toast.makeText(quiztext.this, "correct",Toast.LENGTH_SHORT).show();
+                if( left_time >= 30000)
+                    score += 100;
+                else if(left_time >= 20000)
+                    score += 90;
+                else if(left_time >= 10000)
+                    score += 70;
+                else if (left_time >= 5000)
+                    score += 50;
+                else
+                    score += 40;
+            }
+            else
+                Toast.makeText(quiztext.this, "incorrect",Toast.LENGTH_SHORT).show();
         }
         scoreText.setText("" + score);
         answerText.setText("");
@@ -192,10 +244,10 @@ public class quiztext extends AppCompatActivity {
     private void LoadQuestion() {
         List<Integer> quesList = new ArrayList<>(hashMap2.values());
         Collections.shuffle(quesList);
-
-        if(stageNo == 1 || stageNo == 5) {
+        if(stageNo == 1 || stageNo == 5 || stageNo == 9) {
             answerImage2.setImageResource(quesList.get(0));
             key = getKeyByValue(hashMap2, quesList.get(0));
+//            Toast.makeText(quiztext.this, key,Toast.LENGTH_SHORT).show();
         }
         if(stageNo == 3 || stageNo == 7) {
             if(stageNo == 3)
@@ -204,7 +256,6 @@ public class quiztext extends AppCompatActivity {
             answerImage3.setImageResource(quesList.get(2));
             answerImage4.setImageResource(quesList.get(3));
             answerImage5.setImageResource(quesList.get(4));
-
             key = "";
             for (int i = 0; i < 5; i++)
                 key += getKeyByValue(hashMap2, quesList.get(i));
@@ -212,9 +263,10 @@ public class quiztext extends AppCompatActivity {
     }
     private void displayQuestion() {
         LoadQuestion();
-        qNo = question_count+1;
+        qNo = question_count + 1;
         qNoText.setText(qNo + "/10");
         question_count++;
+        setTime();
     }
     private static <K, V> K getKeyByValue(Map<K, V> map, V value) {
         for (Map.Entry<K, V> entry : map.entrySet()) {
@@ -225,7 +277,7 @@ public class quiztext extends AppCompatActivity {
         return null;
     }
     private void startTimer() {
-        timeLeftInMillis = 10000;
+        timeLeftInMillis = COUNTDOWN_IN_MILLIS;
         countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -234,11 +286,9 @@ public class quiztext extends AppCompatActivity {
             }
             @Override
             public void onFinish() {
-                // Handle timer finish event (e.g., show time up message, move to next question)
-                // For example:
                 timerTextView.setText("Time's up!");
-                // Move to next question or perform necessary actions
-                // displayQuestion(); // Call method to display next question
+                updateScore();
+                check();
             }
         }.start();
     }
@@ -248,15 +298,10 @@ public class quiztext extends AppCompatActivity {
         String timeLeftFormatted = String.format("%02d:%02d", minutes, seconds);
         timerTextView.setText(timeLeftFormatted);
     }
-
     private void cancelTimer() {
         if (countDownTimer != null) {
+            left_time = timeLeftInMillis;
             countDownTimer.cancel();
         }
-    }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        cancelTimer();
     }
 }
