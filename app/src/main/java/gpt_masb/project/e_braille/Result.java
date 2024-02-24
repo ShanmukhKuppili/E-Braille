@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Result extends AppCompatActivity {
     private TextView scoreEdit,resultMsg;
-    private Button restartButton,nextButton;
+    private Button restartButton,nextButton, exitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class Result extends AppCompatActivity {
         resultMsg = findViewById(R.id.resultMsg);
         restartButton = findViewById(R.id.restartButton);
         nextButton = findViewById(R.id.nextButton2);
+        exitButton = findViewById(R.id.exitButton2);
 
         scoreEdit.setText(score+"/1000");
         if(score>= 800){
@@ -47,6 +48,10 @@ public class Result extends AppCompatActivity {
             startActivity(i1);
             finish();
         });
-
+        exitButton.setOnClickListener(view -> {
+            Intent i1 = new Intent(this, Challenge.class);
+            startActivity(i1);
+            finish();
+        });
     }
 }

@@ -41,52 +41,62 @@ public class Challenge extends AppCompatActivity {
             Intent i=new Intent(this, StageIntro.class);
             i.putExtra("stageNo", 1);
             startActivity(i);
+            finish();
         } );
         stage2.setOnClickListener(view ->{
             Intent i=new Intent(this, StageIntro.class);
             i.putExtra("stageNo", 2);
             startActivity(i);
+            finish();
         } );
         stage3.setOnClickListener(view ->{
             Intent i=new Intent(this, StageIntro.class);
             i.putExtra("stageNo", 3);
             startActivity(i);
+            finish();
         } );
         stage4.setOnClickListener(view ->{
             Intent i=new Intent(this, StageIntro.class);
             i.putExtra("stageNo", 4);
             startActivity(i);
+            finish();
         } );
         stage5.setOnClickListener(view ->{
             Intent i=new Intent(this, StageIntro.class);
             i.putExtra("stageNo", 5);
             startActivity(i);
+            finish();
         } );
         stage6.setOnClickListener(view ->{
             Intent i=new Intent(this, StageIntro.class);
             i.putExtra("stageNo", 6);
             startActivity(i);
+            finish();
         } );
         stage7.setOnClickListener(view ->{
             Intent i=new Intent(this, StageIntro.class);
             i.putExtra("stageNo", 7);
             startActivity(i);
+            finish();
         } );
         stage8.setOnClickListener(view ->{
             Intent i=new Intent(this, StageIntro.class);
             i.putExtra("stageNo", 8);
             startActivity(i);
+            finish();
         } );
 
         stage9.setOnClickListener(view ->{
             Intent i=new Intent(this, quiztext.class);
             i.putExtra("stageNo", 9);
             startActivity(i);
+            finish();
         } );
         stage10.setOnClickListener(view ->{
             Intent i=new Intent(this, quiz.class);
             i.putExtra("stageNo", 10);
             startActivity(i);
+            finish();
         } );
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
