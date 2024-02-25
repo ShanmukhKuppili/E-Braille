@@ -1,24 +1,30 @@
 package gpt_masb.project.e_braille;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class wordsigns extends AppCompatActivity {
-    ImageButton imageButton1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wordsigns);
 
-        imageButton1 = findViewById(R.id.imagebutton1);
-        imageButton1.setOnClickListener(view ->{
-            Intent i=new Intent(this, BrailleDictionary.class);
-            startActivity(i);
+        Toolbar toolbar = findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setSubtitle("Word Signs");
+        }
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
             finish();
-        });
+        return super.onOptionsItemSelected(item);
     }
 }
