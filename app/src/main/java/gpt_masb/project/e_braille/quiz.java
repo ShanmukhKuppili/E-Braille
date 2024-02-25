@@ -341,7 +341,9 @@ public class quiz extends AppCompatActivity {
         if (stageNo == 2 || stageNo == 6 || stageNo == 10) {
             if (qText.equals(key)) {
                 Toast.makeText(quiz.this, "correct",Toast.LENGTH_SHORT).show();
-                if( left_time >= 6000)
+                if( left_time == 0)
+                    score += 100;
+                else if( left_time >= 6000)
                     score += 100;
                 else if(left_time >= 5000)
                     score += 90;
@@ -370,12 +372,14 @@ public class quiz extends AppCompatActivity {
                 Toast.makeText(quiz.this, "correct",Toast.LENGTH_SHORT).show();
                 if( left_time >= 30000)
                     score += 100;
+                else if(left_time >= 25000)
+                    score += 95;
                 else if(left_time >= 20000)
                     score += 90;
-                else if(left_time >= 10000)
-                    score += 70;
+                else if (left_time >= 10000)
+                    score += 80;
                 else if (left_time >= 5000)
-                    score += 50;
+                    score += 70;
                 else
                     score += 40;
             }

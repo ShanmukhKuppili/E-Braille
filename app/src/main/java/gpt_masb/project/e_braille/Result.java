@@ -48,7 +48,7 @@ public class Result extends AppCompatActivity {
             layoutParams1.topMargin = 1340;
             exitButton.setLayoutParams(layoutParams1);
         }
-        if(score>= 800){
+        if(score>= 750){
             resultMsg.setText("You have unlocked next Stage");
             resultMsg.setTextColor(Color.GREEN);
             nextButton.setOnClickListener(view -> {
