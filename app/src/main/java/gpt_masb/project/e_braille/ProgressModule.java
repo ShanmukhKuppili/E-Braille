@@ -42,7 +42,7 @@ public class ProgressModule extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            toolbar.setSubtitle("Progress & Analysis");
+            toolbar.setSubtitle("Progress Analysis");
         }
 
         progressGraphPractice = findViewById(R.id.progressGraphPractice);
