@@ -183,6 +183,7 @@ public class quiztext extends AppCompatActivity {
     }
     public void check(){
         if(qNo == 10) {
+            cancelTimer();
             Intent i = new Intent(this, Result.class);
             i.putExtra("Score", score);
             i.putExtra("stageNo", stageNo);
