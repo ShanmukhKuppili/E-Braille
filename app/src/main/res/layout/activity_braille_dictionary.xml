@@ -6,16 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".BrailleDictionary">
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="Dictionary"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:visibility="visible" />
+    <include layout="@layout/toolbar_layout"/>
 
     <ScrollView
         android:id="@+id/scrollView"
