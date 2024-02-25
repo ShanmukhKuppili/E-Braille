@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -39,13 +40,28 @@ public class Result extends AppCompatActivity {
         exitButton = findViewById(R.id.exitButton2);
 
         scoreEdit.setText(score+"/1000");
+
+        if(stageNo == 10){
+            nextButton.setVisibility(View.GONE);
+            ViewGroup.MarginLayoutParams layoutParams1 = (ViewGroup.MarginLayoutParams) exitButton.getLayoutParams();
+            layoutParams1.setMarginStart(440);
+            layoutParams1.topMargin = 1340;
+            exitButton.setLayoutParams(layoutParams1);
+        }
         if(score>= 800){
             resultMsg.setText("You have unlocked next Stage");
             resultMsg.setTextColor(Color.GREEN);
+            nextButton.setOnClickListener(view -> {
+                Intent i1 = new Intent(this, StageIntro.class);
+                i1.putExtra("stageNo", stageNo + 1);
+                startActivity(i1);
+                finish();
+            });
         }
         else{
             resultMsg.setText("Try again");
             resultMsg.setTextColor(Color.RED);
+            nextButton.setEnabled(false);
         }
         restartButton.setOnClickListener(view -> {
             Intent i1 = new Intent(this, StageIntro.class);
@@ -53,17 +69,6 @@ public class Result extends AppCompatActivity {
             startActivity(i1);
             finish();
         });
-        if(stageNo <10){
-            nextButton.setOnClickListener(view -> {
-                Intent i1 = new Intent(this, StageIntro.class);
-                i1.putExtra("stageNo", stageNo + 1);
-                startActivity(i1);
-                finish();
-            });
-        } else{
-            nextButton.setVisibility(View.INVISIBLE);
-            nextButton.setEnabled(false);
-        }
         exitButton.setOnClickListener(view -> {
             Intent i1 = new Intent(this, Challenge.class);
             startActivity(i1);
