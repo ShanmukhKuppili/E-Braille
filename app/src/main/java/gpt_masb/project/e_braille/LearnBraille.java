@@ -121,10 +121,10 @@ public class LearnBraille extends AppCompatActivity {
         if (vibrator != null) {
             // Vibrate for a short duration when a Braille dot is touched
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE));
+                vibrator.vibrate(VibrationEffect.createOneShot(150, VibrationEffect.DEFAULT_AMPLITUDE));
             } else {
                 // Deprecated in API 26
-                vibrator.vibrate(50);
+                vibrator.vibrate(150);
             }
         }
     }

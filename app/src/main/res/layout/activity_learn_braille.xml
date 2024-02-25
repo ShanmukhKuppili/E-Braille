@@ -16,7 +16,7 @@
         android:layout_width="@dimen/_200sdp"
         android:layout_height="wrap_content"
         android:hint="Enter Character"
-        app:endIconDrawable="@drawable/search"
+        app:endIconDrawable="@drawable/next"
         app:endIconMode="custom"
         android:layout_marginTop="@dimen/_80sdp">
 

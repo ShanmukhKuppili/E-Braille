@@ -1,10 +1,13 @@
 package gpt_masb.project.e_braille;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 public class BrailleDictionary extends AppCompatActivity {
@@ -12,6 +15,14 @@ public class BrailleDictionary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_braille_dictionary);
+
+        Toolbar toolbar = findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setSubtitle("Braille Dictionary");
+        }
 
         CardView Alphabets = findViewById(R.id.cardFindAlphabets);
         Alphabets.setOnClickListener(view ->{
@@ -61,6 +72,12 @@ public class BrailleDictionary extends AppCompatActivity {
             startActivity(i);
             finish();
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            finish();
+        return super.onOptionsItemSelected(item);
     }
 }
 
