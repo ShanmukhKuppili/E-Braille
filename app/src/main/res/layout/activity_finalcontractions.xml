@@ -7,34 +7,7 @@
     tools:context=".Finalcontractions"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/white"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="347dp"
-        android:background="@color/white"
-        app:srcCompat="@drawable/left_arrow" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Final Contractions"
-        android:textAlignment="center"
-        android:textColor="#0B0A0A"
-        android:paddingStart="40dp"
-        android:textSize="36sp"
-        android:textStyle="bold" />
+    <include layout="@layout/toolbar_layout"/>
 
     <GridLayout
         android:id="@+id/gridLayout"
