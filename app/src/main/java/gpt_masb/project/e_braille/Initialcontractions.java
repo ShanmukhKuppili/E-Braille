@@ -16,15 +16,9 @@ public class Initialcontractions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initialcontractions);
 
-        imageButton = (ImageButton) findViewById(R.id.imageButton);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivities(new Intent[]{new Intent(Initialcontractions.this,MainActivity.class)});
-            }
-
-
-
+        imageButton = findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(view ->{
+                startActivities(new Intent[]{new Intent(Initialcontractions.this,BrailleDictionary.class)});
         });
     }
 }

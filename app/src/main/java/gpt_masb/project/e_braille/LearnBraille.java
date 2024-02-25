@@ -27,8 +27,6 @@ public class LearnBraille extends AppCompatActivity {
     TextView character;
     ImageView position0, position1, position2, position3, position4, position5;
     LinearLayout displayLayout;
-
-    // Vibrator for haptic feedback
     private Vibrator vibrator;
 
     @Override
@@ -43,7 +41,6 @@ public class LearnBraille extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             toolbar.setSubtitle("Learn Braille");
         }
-
         findCharacter = findViewById(R.id.findCharacter);
         character = findViewById(R.id.character);
 
@@ -85,15 +82,12 @@ public class LearnBraille extends AppCompatActivity {
             }
         });
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home)
             finish();
         return super.onOptionsItemSelected(item);
     }
-
-
     private void setBrailleScript(Character ch, int[] array) {
         displayLayout.setVisibility(View.VISIBLE);
         character.setText(findCharacter.getEditText().getText());
@@ -123,7 +117,6 @@ public class LearnBraille extends AppCompatActivity {
             }
         }
     }
-
     private void activateVibrationMotor() {
         if (vibrator != null) {
             // Vibrate for a short duration when a Braille dot is touched

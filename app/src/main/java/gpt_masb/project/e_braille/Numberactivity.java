@@ -16,19 +16,9 @@ public class Numberactivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numberactivity);
 
-        imageButton = (ImageButton) findViewById(R.id.imageButton2);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivities(new Intent[]{new Intent(Numberactivity.this,MainActivity.class)});
-            }
-
-
-
+        imageButton = findViewById(R.id.imageButton2);
+        imageButton.setOnClickListener(view ->{
+                startActivities(new Intent[]{new Intent(Numberactivity.this,BrailleDictionary.class)});
         });
-
-        
-
-
     }
 }

@@ -8,23 +8,15 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class wordsigns extends AppCompatActivity {
-
     ImageButton imageButton1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wordsigns);
 
-        imageButton1 = (ImageButton) findViewById(R.id.imagebutton1);
-        imageButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivities(new Intent[]{new Intent(wordsigns.this,MainActivity.class)});
-            }
-
-
-
+        imageButton1 = findViewById(R.id.imagebutton1);
+        imageButton1.setOnClickListener(view ->{
+                startActivities(new Intent[]{new Intent(wordsigns.this,BrailleDictionary.class)});
         });
     }
 }
