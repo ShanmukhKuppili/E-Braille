@@ -29,9 +29,6 @@
         <activity
             android:name=".wordsigns"
             android:exported="false" />
-        <!--<activity
-            android:name=".alphabets_activity"
-            android:exported="false" />-->
         <activity
             android:name=".Numberactivity"
             android:exported="false"
@@ -89,5 +86,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

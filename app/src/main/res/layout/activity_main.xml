@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -32,6 +33,7 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -42,8 +44,8 @@
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_60sdp"
                         android:layout_marginTop="@dimen/_10sdp"
-
                         app:srcCompat="@drawable/braille_speech" />
+
                     <TextView
                         android:text="Braille to Speech"
                         android:layout_width="wrap_content"
@@ -52,7 +54,8 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_14sdp"                        />
+                        android:textSize="@dimen/_14sdp" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -67,6 +70,7 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -78,6 +82,7 @@
                         android:layout_height="@dimen/_60sdp"
                         android:layout_marginTop="@dimen/_10sdp"
                         app:srcCompat="@drawable/dictionary" />
+
                     <TextView
                         android:text="Dictionary"
                         android:layout_width="wrap_content"
@@ -86,7 +91,8 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_14sdp"                        />
+                        android:textSize="@dimen/_14sdp" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -101,6 +107,7 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -112,6 +119,7 @@
                         android:layout_height="@dimen/_60sdp"
                         android:layout_marginTop="@dimen/_10sdp"
                         app:srcCompat="@drawable/translation" />
+
                     <TextView
                         android:text="Translation"
                         android:layout_width="wrap_content"
@@ -120,10 +128,10 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_14sdp"                        />
+                        android:textSize="@dimen/_14sdp" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/practice"
@@ -136,6 +144,7 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -147,6 +156,7 @@
                         android:layout_height="@dimen/_60sdp"
                         android:layout_marginTop="@dimen/_10sdp"
                         app:srcCompat="@drawable/practice" />
+
                     <TextView
                         android:text="Practice"
                         android:layout_width="wrap_content"
@@ -155,7 +165,8 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_14sdp"                        />
+                        android:textSize="@dimen/_14sdp"/>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -170,6 +181,7 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -181,6 +193,7 @@
                         android:layout_height="@dimen/_60sdp"
                         android:layout_marginTop="@dimen/_10sdp"
                         app:srcCompat="@drawable/challenge" />
+
                     <TextView
                         android:text="Challenge"
                         android:layout_width="wrap_content"
@@ -189,7 +202,8 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_14sdp"                        />
+                        android:textSize="@dimen/_14sdp" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -204,6 +218,7 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="@dimen/_20sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -215,6 +230,7 @@
                         android:layout_height="@dimen/_60sdp"
                         android:layout_marginTop="@dimen/_10sdp"
                         app:srcCompat="@drawable/progress" />
+
                     <TextView
                         android:text="Progress and Analysis"
                         android:layout_width="wrap_content"
@@ -223,12 +239,11 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_14sdp"                        />
+                        android:textSize="@dimen/_14sdp" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
     </ScrollView>
-
   </LinearLayout>
