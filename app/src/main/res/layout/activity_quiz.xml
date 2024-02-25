@@ -204,22 +204,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionText"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/next"/>
+        app:srcCompat="@drawable/next1"/>
 
     <ImageView
         android:id="@+id/pauseButton"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="47dp"
-        android:layout_marginBottom="290dp"
+        android:layout_marginBottom="280dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/nextButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionText"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/pause" />
+        app:srcCompat="@drawable/pause1" />
 
     <TextView
         android:id="@+id/scoreText"
