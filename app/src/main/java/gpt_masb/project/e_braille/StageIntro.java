@@ -11,7 +11,6 @@ public class StageIntro extends AppCompatActivity {
     int stageNo;
     TextView stageNoText;
     Button start;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +18,6 @@ public class StageIntro extends AppCompatActivity {
 
         Intent restart = getIntent();
         stageNo = restart.getIntExtra("stageNo",  0);
-
         stageNoText = findViewById(R.id.stageNoText);
         stageNoText.setText("Stage:"+stageNo);
 

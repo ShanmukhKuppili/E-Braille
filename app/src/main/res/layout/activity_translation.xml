@@ -32,7 +32,6 @@
         android:background="@drawable/dialog_window_background"
         android:text="Translate to Braille" />
 
-
     <TextView
         android:id="@+id/outputText"
         android:layout_width="350dp"
@@ -50,8 +49,4 @@
         android:maxLines="500"
         android:textSize="30dp"
         android:textStyle="bold" />
-
-
-
-
 </LinearLayout>

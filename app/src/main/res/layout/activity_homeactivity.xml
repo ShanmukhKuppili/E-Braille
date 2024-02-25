@@ -14,7 +14,6 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
@@ -49,7 +48,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-
             android:columnCount="5"
             android:rowCount="10">
 
@@ -261,8 +259,6 @@
                 android:layout_row="6"
                 android:layout_column="1"
                 app:srcCompat="@drawable/z_alphabet" />
-
-
 
             <TextView
                 android:id="@+id/textView3"
@@ -590,12 +586,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:visibility="visible" />
-
-
         </GridLayout>
     </ScrollView>
-
-
-
-
 </RelativeLayout>

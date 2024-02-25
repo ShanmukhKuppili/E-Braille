@@ -35,7 +35,6 @@
             android:columnCount="2"
             android:rowCount="4">
 
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardFindAlphabets"
                 android:layout_width="170dp"
@@ -74,8 +73,6 @@
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="20dp"/>
-
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -118,8 +115,6 @@
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="20dp"/>
-
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -161,8 +156,6 @@
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="20dp"/>
-
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -204,8 +197,6 @@
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="20dp"/>
-
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -247,8 +238,6 @@
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="20dp"/>
-
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -290,8 +279,6 @@
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="13dp"/>
-
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -333,14 +320,9 @@
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="14dp"/>
-
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-
-
         </GridLayout>
     </ScrollView>
-
 </RelativeLayout>

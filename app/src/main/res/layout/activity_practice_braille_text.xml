@@ -29,6 +29,7 @@
                 android:layout_margin="@dimen/_8sdp"
                 android:background="@drawable/round_image_white"
                 android:contentDescription="@string/braille_character" />
+
             <ImageView
                 android:id="@+id/position3"
                 android:layout_width="@dimen/_40sdp"
@@ -36,6 +37,7 @@
                 android:layout_margin="@dimen/_8sdp"
                 android:background="@drawable/round_image_white"
                 android:contentDescription="@string/braille_character" />
+
             <ImageView
                 android:id="@+id/position1"
                 android:layout_width="@dimen/_40sdp"
@@ -50,6 +52,7 @@
                 android:layout_margin="@dimen/_8sdp"
                 android:background="@drawable/round_image_white"
                 android:contentDescription="@string/braille_character" />
+
             <ImageView
                 android:id="@+id/position2"
                 android:layout_width="@dimen/_40sdp"
@@ -57,6 +60,7 @@
                 android:layout_margin="@dimen/_8sdp"
                 android:background="@drawable/round_image_white"
                 android:contentDescription="@string/braille_character" />
+
             <ImageView
                 android:id="@+id/position5"
                 android:layout_width="@dimen/_40sdp"
@@ -64,7 +68,6 @@
                 android:layout_margin="@dimen/_8sdp"
                 android:background="@drawable/round_image_white"
                 android:contentDescription="@string/braille_character" />
-
         </GridLayout>
 
         <TextView
@@ -84,6 +87,7 @@
             android:minEms="5"
             android:hint="English alphabet"
             android:layout_marginTop="@dimen/_30sdp">
+
             <EditText
                 android:id="@+id/enteredChar"
                 android:layout_width="match_parent"
@@ -108,7 +112,5 @@
             app:cornerRadius="15dp"
             app:icon="@drawable/submit"
             app:iconGravity="end" />
-
     </LinearLayout>
-
 </LinearLayout>

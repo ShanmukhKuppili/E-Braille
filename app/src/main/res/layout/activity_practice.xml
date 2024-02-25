@@ -36,7 +36,5 @@
             android:paddingVertical="@dimen/_15sdp"
             android:layout_marginHorizontal="@dimen/_20sdp"
             app:cornerRadius="@dimen/_10sdp"/>
-
     </LinearLayout>
-
 </LinearLayout>

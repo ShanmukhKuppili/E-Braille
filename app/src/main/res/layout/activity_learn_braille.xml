@@ -27,7 +27,6 @@
             android:textAlignment="center"
             android:maxLength="1"
             android:autofillHints=""/>
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
@@ -94,8 +93,6 @@
                 android:layout_margin="@dimen/_8sdp"
                 android:background="@drawable/round_image_white"
                 android:contentDescription="@string/braille_character" />
-
         </GridLayout>
-
     </LinearLayout>
 </LinearLayout>

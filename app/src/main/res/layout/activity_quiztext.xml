@@ -31,7 +31,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/next" />
 
-
     <ImageView
         android:id="@+id/pauseButton"
         android:layout_width="65dp"
@@ -84,7 +83,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <ImageView
         android:id="@+id/answerImage1"
@@ -215,7 +213,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.904" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -229,5 +226,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stageNoT"
         app:layout_constraintVertical_bias="0.119" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -123,7 +122,6 @@
                 android:insetBottom="15dp"
                 android:text="stage10"
                 android:drawableLeft="@drawable/lock_locked"/>
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
