@@ -21,7 +21,7 @@ public class BrailleDictionary extends AppCompatActivity {
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            toolbar.setSubtitle("Practice Braille (Alphabets)");
+            toolbar.setSubtitle("Braille Dictionary");
         }
 
         CardView Alphabets = findViewById(R.id.cardFindAlphabets);
