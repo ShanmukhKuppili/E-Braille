@@ -25,7 +25,6 @@
         android:background="@color/white"
         app:srcCompat="@drawable/left_arrow" />
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -282,9 +281,6 @@
             android:layout_height="130dp"
             android:layout_row="7"
             android:layout_column="0"/>
-
-
-
 
         <TextView
             android:id="@+id/textView3"
@@ -586,6 +582,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:visibility="visible" />
+
         <TextView
             android:id="@+id/textView28"
             android:layout_width="90dp"
@@ -621,11 +618,6 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:visibility="visible" />
-
-
-
     </GridLayout>
     </ScrollView>
-
-
 </RelativeLayout>

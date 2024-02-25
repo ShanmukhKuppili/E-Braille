@@ -16,12 +16,11 @@ public class Finalcontractions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finalcontractions);
 
-        imageButton9 = (ImageButton) findViewById(R.id.imageButton9);
-        imageButton9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivities(new Intent[]{new Intent(Finalcontractions.this,MainActivity.class)});
-            }
+        imageButton9 =findViewById(R.id.imageButton9);
+        imageButton9.setOnClickListener(view ->{
+            Intent i=new Intent(this, BrailleDictionary.class);
+            startActivity(i);
+            finish();
         });
     }
 }

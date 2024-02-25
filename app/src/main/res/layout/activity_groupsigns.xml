@@ -14,7 +14,6 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-
     <ImageButton
         android:id="@+id/groupbutton"
         android:layout_width="wrap_content"
@@ -49,7 +48,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-
             android:columnCount="5"
             android:rowCount="10">
 
@@ -189,7 +187,6 @@
                 android:contentDescription="TODO"
                 app:srcCompat="@drawable/of" />
 
-
             <ImageView
                 android:id="@+id/imageView47"
                 android:layout_width="90dp"
@@ -242,8 +239,6 @@
                 android:layout_column="0"
                 android:contentDescription="TODO"
                 app:srcCompat="@drawable/be" />
-
-
 
             <TextView
                 android:id="@+id/textView57"
@@ -329,8 +324,6 @@
                 android:textStyle="bold"
                 android:visibility="visible"
                 tools:ignore="DuplicateIds" />
-
-
 
             <TextView
                 android:id="@+id/textView44"
@@ -501,13 +494,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:visibility="visible" />
-
-
-
-
-
-
         </GridLayout>
     </ScrollView>
 </RelativeLayout>
-

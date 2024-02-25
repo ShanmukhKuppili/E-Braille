@@ -161,7 +161,6 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/white_circle" />
 
-
     <ImageView
         android:id="@+id/white6"
         android:layout_width="80dp"
@@ -207,7 +206,6 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/next"/>
 
-
     <ImageView
         android:id="@+id/pauseButton"
         android:layout_width="65dp"
@@ -222,7 +220,6 @@
         app:layout_constraintTop_toBottomOf="@+id/questionText"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/pause" />
-
 
     <TextView
         android:id="@+id/scoreText"
@@ -346,7 +343,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.904" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -359,5 +355,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stageNoT" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

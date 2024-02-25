@@ -41,7 +41,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
             setLayout(R.layout.activity_practice_braille_text);
         }
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home)
@@ -80,7 +79,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
                     brailleArr[0] = 0;
                 }
             });
-
             position1.setOnClickListener(v -> {
                 if (brailleArr[1] == 0) {
                     v.setBackgroundResource(R.drawable.round_image_black);
@@ -90,7 +88,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
                     brailleArr[1] = 0;
                 }
             });
-
             position2.setOnClickListener(v -> {
                 if (brailleArr[2] == 0) {
                     v.setBackgroundResource(R.drawable.round_image_black);
@@ -100,7 +97,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
                     brailleArr[2] = 0;
                 }
             });
-
             position3.setOnClickListener(v -> {
                 if (brailleArr[3] == 0) {
                     v.setBackgroundResource(R.drawable.round_image_black);
@@ -110,7 +106,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
                     brailleArr[3] = 0;
                 }
             });
-
             position4.setOnClickListener(v -> {
                 if (brailleArr[4] == 0) {
                     v.setBackgroundResource(R.drawable.round_image_black);
@@ -120,7 +115,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
                     brailleArr[4] = 0;
                 }
             });
-
             position5.setOnClickListener(v -> {
                 if (brailleArr[5] == 0) {
                     v.setBackgroundResource(R.drawable.round_image_black);
@@ -130,7 +124,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
                     brailleArr[5] = 0;
                 }
             });
-
             findViewById(R.id.submit).setOnClickListener(v -> {
                 Map<Character, int[]> alphabetMap = brailleScript.getAlphabetsMap();
 
@@ -202,7 +195,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
 
                             charactersList2.add(charactersList2.get(currentCharIndex - charactersList1.size()));
                         }
-
                         currentCharIndex++;
                         savePracticeData(currentCharIndex, "Practice 1 chars2", charactersList2);
 
@@ -228,7 +220,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
             }
         }
     }
-
     private void getPracticeHistory() {
         SharedPreferences sharedPreferences = getSharedPreferences("Practice Module", MODE_PRIVATE);
         currentCharIndex = sharedPreferences.getInt("Practice 1 index", 0);
@@ -237,7 +228,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
         String characters2 = sharedPreferences.getString("Practice 1 chars2", null);
         charactersList2 = getCharactersList(characters2);
     }
-
     private void savePracticeData(int currentCharIndex, String charsKey, ArrayList<Character> charactersList) {
         SharedPreferences.Editor ed = getSharedPreferences("Practice Module", MODE_PRIVATE).edit();
         ed.putInt("Practice 1 index", currentCharIndex);
@@ -250,7 +240,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
         ed.putString(charsKey, stringBuilder.toString());
         ed.apply();
     }
-
     private void setCurBrailleChar(int[] arrBraille) {
         ImageView[] dots = {position0, position1, position2, position3, position4, position5};
         for (int i = 0; i < arrBraille.length; i++) {
@@ -261,7 +250,6 @@ public class PracticeBrailleAlphabets extends AppCompatActivity {
             }
         }
     }
-
     private ArrayList<Character> getCharactersList(String characters) {
         ArrayList<Character> charactersList = new ArrayList<>();
         if (characters != null) {

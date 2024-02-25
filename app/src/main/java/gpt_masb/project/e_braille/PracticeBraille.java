@@ -18,12 +18,10 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Random;
-
 public class PracticeBraille extends AppCompatActivity {
     private Button brailleAlphabets, brailleNum;
     int alphabetCharIndex, numCharIndex;
     ArrayList<Character> alphabetList1, alphabetList2, numericList1, numericList2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,21 +44,18 @@ public class PracticeBraille extends AppCompatActivity {
         getPracticeHistory();
         setupBraillePracticeSession();
     }
-
     @Override
     protected void onRestart() {
         super.onRestart();
         getPracticeHistory();
         setupBraillePracticeSession();
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == android.R.id.home)
             finish();
         return super.onOptionsItemSelected(item);
     }
-
     private void getPracticeHistory() {
         SharedPreferences sp = getSharedPreferences("Practice Module", MODE_PRIVATE);
         alphabetCharIndex = sp.getInt("Practice 1 index", 0);
@@ -80,7 +75,6 @@ public class PracticeBraille extends AppCompatActivity {
         String numericCharacters2 = sp.getString("Practice 2 chars2", null);
         numericList2 = getCharactersList(numericCharacters2, chars2);
     }
-
     private ArrayList<Character> getCharactersList(String characters, ArrayList<Character> chars) {
         ArrayList<Character> charactersList = new ArrayList<>();
         if (characters != null) {
@@ -98,7 +92,6 @@ public class PracticeBraille extends AppCompatActivity {
         }
         return charactersList;
     }
-
     private void setupBraillePracticeSession() {
         if(alphabetCharIndex == (alphabetList1.size()+alphabetList2.size())) {
             brailleAlphabets.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.check_circle), null, null, null);
@@ -106,7 +99,6 @@ public class PracticeBraille extends AppCompatActivity {
                 showAlertDialogBox(new Intent(this, PracticeBrailleAlphabets.class));
             });
         }
-
         if(numCharIndex == (numericList1.size()+numericList2.size())) {
             brailleNum.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.check_circle), null, null, null);
             brailleNum.setOnClickListener(v -> {
@@ -114,7 +106,6 @@ public class PracticeBraille extends AppCompatActivity {
             });
         }
     }
-
     private void showAlertDialogBox(Intent intent) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.dialog_window_style);
         builder.setTitle("You have already completed\nthis Practice Session!");
@@ -124,7 +115,6 @@ public class PracticeBraille extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-
         builder.setNegativeButton("Practice Again", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -146,7 +136,6 @@ public class PracticeBraille extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         builder.show();
     }
 }

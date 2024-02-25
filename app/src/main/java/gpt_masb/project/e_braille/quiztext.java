@@ -220,24 +220,26 @@ public class quiztext extends AppCompatActivity {
                     score += 30;
             }
             else
-                Toast.makeText(quiztext.this, "incorrect",Toast.LENGTH_SHORT).show();
+                Toast.makeText(quiztext.this, "incorrect", Toast.LENGTH_SHORT).show();
         }
         else if(stageNo == 3 || stageNo == 7){
             if (answer != null && answer.equals(key)) {
                 Toast.makeText(quiztext.this, "correct",Toast.LENGTH_SHORT).show();
                 if( left_time >= 30000)
                     score += 100;
+                else if(left_time >= 25000)
+                    score += 95;
                 else if(left_time >= 20000)
                     score += 90;
-                else if(left_time >= 10000)
-                    score += 70;
+                else if (left_time >= 10000)
+                    score += 80;
                 else if (left_time >= 5000)
-                    score += 50;
+                    score += 70;
                 else
                     score += 40;
             }
             else
-                Toast.makeText(quiztext.this, "incorrect",Toast.LENGTH_SHORT).show();
+                Toast.makeText(quiztext.this, "incorrect", Toast.LENGTH_SHORT).show();
         }
         scoreText.setText("" + score);
         answerText.setText("");

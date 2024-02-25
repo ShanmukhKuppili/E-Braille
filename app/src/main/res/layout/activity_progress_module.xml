@@ -39,7 +39,7 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_20sdp"/>                      />
+                        android:textSize="@dimen/_20sdp"/>
 
                     <com.github.mikephil.charting.charts.PieChart
                         android:id="@+id/progressGraphPractice"
@@ -56,11 +56,13 @@
                 app:cardUseCompatPadding="true"
                 app:cardCornerRadius="@dimen/_10sdp"
                 android:layout_marginHorizontal="@dimen/_10sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center">
+
                     <TextView
                         android:text="Challenge Progress"
                         android:layout_width="wrap_content"
@@ -69,7 +71,7 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_20sdp"/>                      />
+                        android:textSize="@dimen/_20sdp"/>
 
                     <com.github.mikephil.charting.charts.PieChart
                         android:id="@+id/progressGraphChallenge"
@@ -86,12 +88,14 @@
                 app:cardUseCompatPadding="true"
                 app:cardCornerRadius="@dimen/_10sdp"
                 android:layout_marginHorizontal="@dimen/_10sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center">
                     <TextView
+
                         android:text="Challenge Accuracy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -99,7 +103,7 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_20sdp"/>                      />
+                        android:textSize="@dimen/_20sdp"/>
 
                     <com.github.mikephil.charting.charts.BarChart
                         android:id="@+id/accuracyBarChart"
@@ -116,11 +120,13 @@
                 app:cardUseCompatPadding="true"
                 app:cardCornerRadius="@dimen/_10sdp"
                 android:layout_marginHorizontal="@dimen/_10sdp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center">
+
                     <TextView
                         android:text="Achievements"
                         android:layout_width="wrap_content"

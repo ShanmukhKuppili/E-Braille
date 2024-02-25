@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 public class Practice extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,12 +21,9 @@ public class Practice extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             toolbar.setSubtitle("Practice");
         }
-
         findViewById(R.id.learn_braille).setOnClickListener(v -> startActivity(new Intent(this, LearnBraille.class)));
-
         findViewById(R.id.practice_braille).setOnClickListener(v -> startActivity(new Intent(this, PracticeBraille.class)));
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == android.R.id.home)

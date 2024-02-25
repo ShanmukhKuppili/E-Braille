@@ -25,59 +25,52 @@ public class BrailleDictionary extends AppCompatActivity {
         }
 
         CardView Alphabets = findViewById(R.id.cardFindAlphabets);
-        Alphabets.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this, Homeactivity.class)});
-            }
+        Alphabets.setOnClickListener(view ->{
+            Intent i=new Intent(this, Homeactivity.class);
+            startActivity(i);
+            finish();
         });
-
 
         CardView Numbers = findViewById(R.id.cardFindNumbers);
-        Numbers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this, Numberactivity.class)});
-            }
+        Numbers.setOnClickListener(view ->{
+            Intent i=new Intent(this, Numberactivity.class);
+            startActivity(i);
+            finish();
         });
+
         CardView Puctuation = findViewById(R.id.cardFindPunctuation);
-        Puctuation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this, punctuation.class)});
-            }
+        Puctuation.setOnClickListener(view ->{
+            Intent i=new Intent(this, punctuation.class);
+            startActivity(i);
+            finish();
         });
 
         CardView wordsigns = findViewById(R.id.cardFindwordsigns);
-        wordsigns.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this, wordsigns.class)});
-            }
+        wordsigns.setOnClickListener(view ->{
+            Intent i=new Intent(this, wordsigns.class);
+            startActivity(i);
+            finish();
         });
 
         CardView groupsigns = findViewById(R.id.cardFindgroupsigns);
-        groupsigns.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this,groupsigns.class)});
-            }
+        groupsigns.setOnClickListener(view ->{
+            Intent i=new Intent(this, groupsigns.class);
+            startActivity(i);
+            finish();
         });
 
         CardView Initialcontractions = findViewById(R.id.cardFindInitailcontractions);
-        Initialcontractions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this,Initialcontractions.class)});
-            }
+        Initialcontractions.setOnClickListener(view ->{
+            Intent i=new Intent(this, Initialcontractions.class);
+            startActivity(i);
+            finish();
         });
 
         CardView Finalcontractions = findViewById(R.id.cardFindFinalcontractions);
-        Finalcontractions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this,Finalcontractions.class)});
-            }
+        Finalcontractions.setOnClickListener(view ->{
+            Intent i=new Intent(this, Finalcontractions.class);
+            startActivity(i);
+            finish();
         });
     }
     @Override

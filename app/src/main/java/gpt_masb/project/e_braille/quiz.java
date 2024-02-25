@@ -1,5 +1,6 @@
 package gpt_masb.project.e_braille;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -27,10 +28,11 @@ public class quiz extends AppCompatActivity {
     Map<String, int[]> hashMap;
     CountDownTimer countDownTimer;
     String qText, key ,ans = "";
-    char q[] = new char[5];
+    char[] q = new char[5];
     long timeLeftInMillis, COUNTDOWN_IN_MILLIS, left_time;
     int[] ar = new int[]{0, 0, 0, 0, 0, 0};
     int score, qNo, stageNo, question_count = 0, x = 0, c = 0;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -336,12 +338,15 @@ public class quiz extends AppCompatActivity {
         else
             COUNTDOWN_IN_MILLIS = 40000;
     }
+    @SuppressLint("SetTextI18n")
     public void updateScore() {
         key = getKeyByValue(hashMap, ar);
         if (stageNo == 2 || stageNo == 6 || stageNo == 10) {
             if (qText.equals(key)) {
                 Toast.makeText(quiz.this, "correct",Toast.LENGTH_SHORT).show();
-                if( left_time >= 6000)
+                if( left_time == 0)
+                    score += 100;
+                else if( left_time >= 6000)
                     score += 100;
                 else if(left_time >= 5000)
                     score += 90;
@@ -370,12 +375,14 @@ public class quiz extends AppCompatActivity {
                 Toast.makeText(quiz.this, "correct",Toast.LENGTH_SHORT).show();
                 if( left_time >= 30000)
                     score += 100;
+                else if(left_time >= 25000)
+                    score += 95;
                 else if(left_time >= 20000)
                     score += 90;
-                else if(left_time >= 10000)
-                    score += 70;
+                else if (left_time >= 10000)
+                    score += 80;
                 else if (left_time >= 5000)
-                    score += 50;
+                    score += 70;
                 else
                     score += 40;
             }

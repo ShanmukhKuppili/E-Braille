@@ -33,6 +33,7 @@ public class ProgressModule extends AppCompatActivity {
     BarChart accuracyBarChart;
     TextView achievementPractice, achievementChallenge;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress_module);
@@ -44,7 +45,6 @@ public class ProgressModule extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             toolbar.setSubtitle("Progress Analysis");
         }
-
         progressGraphPractice = findViewById(R.id.progressGraphPractice);
         progressGraphChallenge = findViewById(R.id.progressGraphChallenge);
         accuracyBarChart = findViewById(R.id.accuracyBarChart);
@@ -55,14 +55,12 @@ public class ProgressModule extends AppCompatActivity {
         generateChallengeAnalysisGraph();
         updateUserAchievements();
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home)
             finish();
         return super.onOptionsItemSelected(item);
     }
-
     private void generatePracticeAnalysisGraph() {
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
 
@@ -88,7 +86,6 @@ public class ProgressModule extends AppCompatActivity {
         progressGraphPractice.setCenterText("Practice Braille");
         progressGraphPractice.animate();
     }
-
     private void generateChallengeAnalysisGraph() {
         SharedPreferences sp = getSharedPreferences("Challenge Module", MODE_PRIVATE);
         int currentStage = sp.getInt("Current Stage", 0);
@@ -141,7 +138,6 @@ public class ProgressModule extends AppCompatActivity {
         accuracyBarChart.animateXY(1500, 2000);
 
     }
-
     private void updateUserAchievements() {
         SharedPreferences sp1 = getSharedPreferences("Practice Module", MODE_PRIVATE);
         int practiceIndex1 = sp1.getInt("Practice 1 index", 0);
