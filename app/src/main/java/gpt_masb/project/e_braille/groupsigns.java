@@ -16,7 +16,9 @@ public class groupsigns extends AppCompatActivity {
 
         groupbutton = (ImageButton) findViewById(R.id.groupbutton);
         groupbutton.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(groupsigns.this,BrailleDictionary.class)});
+            Intent i=new Intent(this, BrailleDictionary.class);
+            startActivity(i);
+            finish();
         });
     }
 }

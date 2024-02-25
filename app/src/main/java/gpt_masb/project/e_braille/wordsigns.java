@@ -16,7 +16,9 @@ public class wordsigns extends AppCompatActivity {
 
         imageButton1 = findViewById(R.id.imagebutton1);
         imageButton1.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(wordsigns.this,BrailleDictionary.class)});
+            Intent i=new Intent(this, BrailleDictionary.class);
+            startActivity(i);
+            finish();
         });
     }
 }

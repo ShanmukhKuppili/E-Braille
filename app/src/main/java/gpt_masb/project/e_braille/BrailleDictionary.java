@@ -12,33 +12,54 @@ public class BrailleDictionary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_braille_dictionary);
+
         CardView Alphabets = findViewById(R.id.cardFindAlphabets);
         Alphabets.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this, Homeactivity.class)});
+            Intent i=new Intent(this, Homeactivity.class);
+            startActivity(i);
+            finish();
         });
+
         CardView Numbers = findViewById(R.id.cardFindNumbers);
         Numbers.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this, Numberactivity.class)});
+            Intent i=new Intent(this, Numberactivity.class);
+            startActivity(i);
+            finish();
         });
+
         CardView Puctuation = findViewById(R.id.cardFindPunctuation);
         Puctuation.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this, punctuation.class)});
+            Intent i=new Intent(this, punctuation.class);
+            startActivity(i);
+            finish();
         });
+
         CardView wordsigns = findViewById(R.id.cardFindwordsigns);
         wordsigns.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this, wordsigns.class)});
+            Intent i=new Intent(this, wordsigns.class);
+            startActivity(i);
+            finish();
         });
+
         CardView groupsigns = findViewById(R.id.cardFindgroupsigns);
         groupsigns.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this,groupsigns.class)});
+            Intent i=new Intent(this, groupsigns.class);
+            startActivity(i);
+            finish();
         });
+
         CardView Initialcontractions = findViewById(R.id.cardFindInitailcontractions);
         Initialcontractions.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this,Initialcontractions.class)});
+            Intent i=new Intent(this, Initialcontractions.class);
+            startActivity(i);
+            finish();
         });
+
         CardView Finalcontractions = findViewById(R.id.cardFindFinalcontractions);
         Finalcontractions.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(BrailleDictionary.this,Finalcontractions.class)});
+            Intent i=new Intent(this, Finalcontractions.class);
+            startActivity(i);
+            finish();
         });
     }
 }

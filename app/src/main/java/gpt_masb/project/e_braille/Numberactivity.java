@@ -18,7 +18,9 @@ public class Numberactivity extends AppCompatActivity {
 
         imageButton = findViewById(R.id.imageButton2);
         imageButton.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(Numberactivity.this,BrailleDictionary.class)});
+            Intent i=new Intent(this, BrailleDictionary.class);
+            startActivity(i);
+            finish();
         });
     }
 }

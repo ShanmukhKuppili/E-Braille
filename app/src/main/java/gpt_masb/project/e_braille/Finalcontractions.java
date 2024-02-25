@@ -18,7 +18,9 @@ public class Finalcontractions extends AppCompatActivity {
 
         imageButton9 =findViewById(R.id.imageButton9);
         imageButton9.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(Finalcontractions.this,BrailleDictionary.class)});
+            Intent i=new Intent(this, BrailleDictionary.class);
+            startActivity(i);
+            finish();
         });
     }
 }

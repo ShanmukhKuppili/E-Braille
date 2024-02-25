@@ -16,7 +16,9 @@ public class punctuation extends AppCompatActivity {
 
         imageButton = findViewById(R.id.imageButton3);
         imageButton.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(punctuation.this,BrailleDictionary.class)});
+            Intent i=new Intent(this, BrailleDictionary.class);
+            startActivity(i);
+            finish();
         });
     }
 }

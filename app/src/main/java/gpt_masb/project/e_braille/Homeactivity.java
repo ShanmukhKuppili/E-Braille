@@ -14,7 +14,9 @@ public class Homeactivity extends AppCompatActivity {
         setContentView(R.layout.activity_homeactivity);
         imageButton = findViewById(R.id.imageButton);
         imageButton.setOnClickListener(view-> {
-                startActivities(new Intent[]{new Intent(Homeactivity.this,BrailleDictionary.class)});
+            Intent i=new Intent(this, BrailleDictionary.class);
+            startActivity(i);
+            finish();
         });
     }
 }

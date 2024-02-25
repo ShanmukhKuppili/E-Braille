@@ -18,7 +18,9 @@ public class Initialcontractions extends AppCompatActivity {
 
         imageButton = findViewById(R.id.imageButton);
         imageButton.setOnClickListener(view ->{
-                startActivities(new Intent[]{new Intent(Initialcontractions.this,BrailleDictionary.class)});
+            Intent i=new Intent(this, BrailleDictionary.class);
+            startActivity(i);
+            finish();
         });
     }
 }
