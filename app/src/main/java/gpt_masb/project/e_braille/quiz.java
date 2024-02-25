@@ -1,6 +1,5 @@
 package gpt_masb.project.e_braille;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -32,7 +31,7 @@ public class quiz extends AppCompatActivity {
     long timeLeftInMillis, COUNTDOWN_IN_MILLIS, left_time;
     int[] ar = new int[]{0, 0, 0, 0, 0, 0};
     int score, qNo, stageNo, question_count = 0, x = 0, c = 0;
-    @SuppressLint("SetTextI18n")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -338,7 +337,7 @@ public class quiz extends AppCompatActivity {
         else
             COUNTDOWN_IN_MILLIS = 40000;
     }
-    @SuppressLint("SetTextI18n")
+
     public void updateScore() {
         key = getKeyByValue(hashMap, ar);
         if (stageNo == 2 || stageNo == 6 || stageNo == 10) {
