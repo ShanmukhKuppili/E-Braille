@@ -3,6 +3,7 @@ package gpt_masb.project.e_braille;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -13,12 +14,16 @@ import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -87,7 +92,7 @@ public class ProgressModule extends AppCompatActivity {
     private void generateChallengeAnalysisGraph() {
         SharedPreferences sp = getSharedPreferences("Challenge Module", MODE_PRIVATE);
         int currentStage = sp.getInt("Current Stage", 0);
-        float percentage = (float) currentStage /10*100;
+        float percentage = (float) currentStage/10*100;
 
         //For challenge progress
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
@@ -110,7 +115,8 @@ public class ProgressModule extends AppCompatActivity {
             int score = sp.getInt("Score"+i, 0);
             Log.d("score challenge", score+"");
             float accuracy = (float) score/10;
-            barEntries.add(new BarEntry(i, accuracy));
+            BarEntry barEntry = new BarEntry(i, accuracy);
+            barEntries.add(barEntry);
         }
         BarDataSet barDataSet = new BarDataSet(barEntries, "Accuracy of Different Stages");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
@@ -119,6 +125,21 @@ public class ProgressModule extends AppCompatActivity {
         BarData barData = new BarData(barDataSet);
         accuracyBarChart.setData(barData);
         accuracyBarChart.getDescription().setEnabled(false);
+
+        XAxis xAxis = accuracyBarChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setDrawGridLines(false);
+        xAxis.setGranularity(1f); // only intervals of 1 day
+        xAxis.setLabelCount(7);
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getAxisLabel(float value, AxisBase axis) {
+                return "Stage-"+(int)value;
+            }
+        });
+
+        accuracyBarChart.animateXY(1500, 2000);
+
     }
 
     private void updateUserAchievements() {

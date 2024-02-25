@@ -74,11 +74,6 @@ public class PracticeBrailleNumbers extends AppCompatActivity {
 
             character.setText(charactersList1.get(currentCharIndex).toString());
 
-        /*if (alphabetCharIndex == alphabetList1.size() - 1) {
-            Button next = (Button) findViewById(R.id.submit);
-            next.setText("Done");
-        }*/
-
             position0.setOnClickListener(v -> {
                 if (brailleArr[0] == 0) {
                     v.setBackgroundResource(R.drawable.round_image_black);
@@ -193,15 +188,6 @@ public class PracticeBrailleNumbers extends AppCompatActivity {
 
             Log.d("characterlist braille", charactersList2.toString());
 
-            /*if (alphabetCharIndex >= 26) {
-                enteredChar.setInputType(InputType.TYPE_CLASS_NUMBER);
-                TextView question = (TextView) findViewById(R.id.question);
-                question.setText("Enter Number for above Braille Character");
-            } else if (alphabetCharIndex == alphabetList2.size() - 1) {
-                Button next = (Button) findViewById(R.id.submit);
-                next.setText("Done");
-            }*/
-
             if ((currentCharIndex - charactersList2.size()) < charactersList2.size()) {
                 brailleArr = charMap.getOrDefault(charactersList2.get(currentCharIndex - charactersList1.size()), new int[]{0});
                 assert brailleArr != null;
@@ -241,27 +227,6 @@ public class PracticeBrailleNumbers extends AppCompatActivity {
                             dialogResult.dismiss();
                         });
                         dialogResult.show();
-
-
-                                /*if (alphabetCharIndex == alphabetList2.size() - 1) {
-                                    Button next = (Button) v;
-                                    next.setText("Done");
-                                }*/
-
-                        /*if (alphabetCharIndex == alphabetList2.size()) {
-                            Toast.makeText(this, "Congrats! You have completed this practice module.", Toast.LENGTH_SHORT).show();
-                            finish();
-                        } else {
-                            brailleArr = charMap.getOrDefault(alphabetList2.get(alphabetCharIndex), new int[]{0});
-                            setCurBrailleChar(brailleArr);
-                            enteredChar.setText("");
-                        }*/
-
-                                /*if (alphabetCharIndex == 26) {
-                                    enteredChar.setInputType(InputType.TYPE_CLASS_NUMBER);
-                                    TextView question = (TextView) findViewById(R.id.question);
-                                    question.setText("Enter Number for above Braille Character");
-                                }*/
                     } else {
                         Toast.makeText(this, "Enter the character!", Toast.LENGTH_SHORT).show();
                     }

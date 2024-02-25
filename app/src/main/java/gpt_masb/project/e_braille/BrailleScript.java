@@ -72,7 +72,7 @@ public class BrailleScript {
         return hashMap;
     }
 
-    public Map<Character, int[]> getNumbersMap() {   //Return the map of braille characters for alphabets
+    public Map<Character, int[]> getNumbersMap() {   //Return the map of braille characters for numbers
         Map<Character, int[]> hashMap = new HashMap<>();
 
 
@@ -100,6 +100,34 @@ public class BrailleScript {
 
         return hashMap;
     }
+
+    public Map<Character, int[]> getPuntuationMap() {   //Return the map of braille characters for numbers
+        Map<Character, int[]> hashMap = new HashMap<>();
+
+        hashMap.put('.', new int[]{0, 1, 0, 0, 1, 1});
+        hashMap.put(',', new int[]{0, 0, 0, 0, 1, 0});
+        hashMap.put('?', new int[]{0, 1, 0, 0, 0, 1});
+        hashMap.put('!', new int[]{0, 0, 0, 0, 1, 1});
+        hashMap.put(';', new int[]{0, 1, 1, 0, 0, 0});
+        hashMap.put(':', new int[]{0, 1, 0, 0, 1, 0});
+        hashMap.put('(', new int[]{0, 0, 0, 1, 1, 0});
+        hashMap.put(')', new int[]{0, 0, 0, 0, 1, 1});
+        hashMap.put('-', new int[]{0, 0, 1, 0, 0, 1});
+        hashMap.put('&', new int[]{1, 1, 1, 1, 0, 1});
+        hashMap.put('\'', new int[]{0, 0, 1, 0, 0, 0});
+        hashMap.put('/', new int[]{0, 0, 0, 0, 0, 0});
+        hashMap.put('"', new int[]{0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1});
+        hashMap.put('[', new int[]{0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1});
+        hashMap.put(']', new int[]{0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1});
+        hashMap.put('{', new int[]{0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1});
+        hashMap.put('}', new int[]{0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1});
+        hashMap.put('@', new int[]{0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0});
+        hashMap.put('#', new int[]{0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1});
+
+        return hashMap;
+    }
+
+
 
     public <K, V> K getKeyByValue(Map<K, V> map, V value) {   //Return the value of key for braille character
         for (Map.Entry<K, V> entry : map.entrySet()) {

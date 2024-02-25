@@ -27,7 +27,7 @@ public class Result extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("Challenge Module", MODE_PRIVATE);
         SharedPreferences.Editor ed = sharedPreferences.edit();
         int currentStage = sharedPreferences.getInt("Current Stage", 0);
-        if(stageNo>currentStage){
+        if(stageNo > currentStage && score >= 800){
             ed.putInt("Current Stage", stageNo);
         }
         ed.putInt("Score"+stageNo, score);
