@@ -473,7 +473,6 @@ public class quiz extends AppCompatActivity {
             countDownTimer.cancel();
         }
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

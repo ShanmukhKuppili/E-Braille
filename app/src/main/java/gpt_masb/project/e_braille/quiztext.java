@@ -71,7 +71,12 @@ public class quiztext extends AppCompatActivity {
             answerImage5.setVisibility(View.INVISIBLE);
 
             ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) answerImage2.getLayoutParams();
-            layoutParams.setMarginStart(350);
+            layoutParams.setMarginStart(260);
+            layoutParams.topMargin= 245;
+
+            layoutParams.width = (int)(layoutParams.width * 1.5);
+            layoutParams.height = (int)(layoutParams.height * 1.5);
+
             answerImage2.setLayoutParams(layoutParams);
         }
         else if (stageNo == 5) {
@@ -82,11 +87,17 @@ public class quiztext extends AppCompatActivity {
             answerImage5.setVisibility(View.INVISIBLE);
 
             ViewGroup.MarginLayoutParams layoutParams1 = (ViewGroup.MarginLayoutParams) answerImage1.getLayoutParams();
-            layoutParams1.setMarginStart(270);
+            layoutParams1.setMarginStart(160);
+            layoutParams1.width = (int)(layoutParams1.width * 1.4);
+            layoutParams1.height = (int)(layoutParams1.height * 1.4);
+            layoutParams1.topMargin= 245;
             answerImage1.setLayoutParams(layoutParams1);
 
             ViewGroup.MarginLayoutParams layoutParams2 = (ViewGroup.MarginLayoutParams) answerImage2.getLayoutParams();
-            layoutParams2.setMarginStart(450);
+            layoutParams2.setMarginStart(390);
+            layoutParams2.width = (int)(layoutParams2.width * 1.4);
+            layoutParams2.height = (int)(layoutParams2.height * 1.4);
+            layoutParams2.topMargin= 245;
             answerImage2.setLayoutParams(layoutParams2);
         }
 
@@ -251,17 +262,19 @@ public class quiztext extends AppCompatActivity {
         if(stageNo == 1 || stageNo == 5 || stageNo == 9) {
             answerImage2.setImageResource(quesList.get(0));
             key = getKeyByValue(hashMap2, quesList.get(0));
-//            Toast.makeText(quiztext.this, key,Toast.LENGTH_SHORT).show();
         }
         if(stageNo == 3 || stageNo == 7) {
-            if(stageNo == 3)
+            int i = 1;
+            if(stageNo == 3) {
                 answerImage1.setImageResource(quesList.get(0));
+                i = 0;
+            }
             answerImage2.setImageResource(quesList.get(1));
             answerImage3.setImageResource(quesList.get(2));
             answerImage4.setImageResource(quesList.get(3));
             answerImage5.setImageResource(quesList.get(4));
             key = "";
-            for (int i = 0; i < 5; i++)
+            for (; i < 5; i++)
                 key += getKeyByValue(hashMap2, quesList.get(i));
         }
     }
@@ -308,7 +321,6 @@ public class quiztext extends AppCompatActivity {
             countDownTimer.cancel();
         }
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
