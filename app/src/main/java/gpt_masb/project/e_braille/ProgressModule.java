@@ -15,6 +15,7 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -116,16 +117,25 @@ public class ProgressModule extends AppCompatActivity {
         BarDataSet barDataSet = new BarDataSet(barEntries, "Accuracy of Different Stages");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         barDataSet.setValueTextColor(Color.BLACK);
-        barDataSet.setValueTextSize(16f);
+        barDataSet.setValueTextSize(12f);
         BarData barData = new BarData(barDataSet);
         accuracyBarChart.setData(barData);
         accuracyBarChart.getDescription().setEnabled(false);
+
+        YAxis yAxisLeft = accuracyBarChart.getAxisLeft();
+        yAxisLeft.setAxisMaximum(100);
+        yAxisLeft.setAxisMinimum(0);
+
+        YAxis yAxisRight = accuracyBarChart.getAxisRight();
+        yAxisRight.setAxisMaximum(100);
+        yAxisLeft.setAxisMinimum(0);
 
         XAxis xAxis = accuracyBarChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setDrawGridLines(false);
         xAxis.setGranularity(1f); // only intervals of 1 day
-        xAxis.setLabelCount(7);
+        xAxis.setLabelCount(4);
+        xAxis.setAxisMaximum(10);
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
