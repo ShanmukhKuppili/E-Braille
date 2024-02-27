@@ -27,7 +27,8 @@ public class Result extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("Challenge Module", MODE_PRIVATE);
         SharedPreferences.Editor ed = sharedPreferences.edit();
         int currentStage = sharedPreferences.getInt("Current Stage", 0);
-        if(stageNo > currentStage && score >= 800){
+
+        if(stageNo > currentStage && score >= 750){
             ed.putInt("Current Stage", stageNo);
         }
         ed.putInt("Score"+stageNo, score);
@@ -48,7 +49,7 @@ public class Result extends AppCompatActivity {
             layoutParams1.topMargin = 1340;
             exitButton.setLayoutParams(layoutParams1);
         }
-        if(score>= 750){
+        if(score>= 750 || currentStage > stageNo){
             resultMsg.setText("You have unlocked next Stage");
             resultMsg.setTextColor(Color.GREEN);
             nextButton.setOnClickListener(view -> {

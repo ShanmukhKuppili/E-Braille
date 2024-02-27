@@ -168,6 +168,7 @@
         android:layout_width="@dimen/_280sdp"
         android:layout_height="@dimen/_120sdp"
         android:textSize="96sp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

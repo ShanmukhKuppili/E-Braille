@@ -105,20 +105,17 @@ public class Challenge extends AppCompatActivity {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home)
             finish();
         return super.onOptionsItemSelected(item);
     }
-
     @Override
     protected void onRestart() {
         super.onRestart();
         getChallengeSession();
     }
-
     private void getChallengeSession() {
         SharedPreferences sp = getSharedPreferences("Challenge Module", MODE_PRIVATE);
         int currentStage = sp.getInt("Current Stage", 0);

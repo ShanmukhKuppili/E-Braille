@@ -71,7 +71,7 @@ public class quiztext extends AppCompatActivity {
             answerImage5.setVisibility(View.INVISIBLE);
 
             ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) answerImage2.getLayoutParams();
-            layoutParams.setMarginStart(260);
+            layoutParams.setMarginStart(170);
             layoutParams.topMargin= 245;
 
             layoutParams.width = (int)(layoutParams.width * 1.5);
